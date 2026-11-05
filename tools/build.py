@@ -52,6 +52,37 @@ def speaker(m):
  else:name,scope='OSCAR + JUAN','CLOSING'
  return m.group(0)+f'<div class="speaker-badge" data-speaker="{name}"><span class="speaker-dot"></span><span>{name}</span><span class="speaker-scope">{scope}</span></div>'
 result=re.sub(r'<section class="slide\b[^>]*>',speaker,result)
+# Hidden scenes retain their source and numbering; navigation skips them.
+for number,scene in enumerate(schedule,1):
+ if scene.get('hidden'):
+  pattern=r'(<section class="slide\b[^>]*\bintro'+f'{number:02}'+r'\b[^>]*)(>)'
+  result,n=re.subn(pattern,r'\1 data-hidden="true"\2',result,count=1)
+  assert n==1
+hidden_navigation="""  function skipHidden(n, direction = 1) {
+    n = clamp(n, 0, slides.length - 1);
+    const shown = slides.map((s, k) => s.hasAttribute('data-hidden') ? -1 : k).filter(k => k >= 0);
+    return direction < 0 ? (shown.filter(k => k <= n).at(-1) ?? shown[0]) : (shown.find(k => k >= n) ?? shown.at(-1));
+  }
+"""
+a='  /* ---------- state → DOM ---------- */'
+assert result.count(a)==1
+result=result.replace(a,hidden_navigation+a)
+a='    motion.cancel();\n    const from = slides[i];'
+assert result.count(a)==1
+result=result.replace(a,'    n = skipHidden(n, n < i ? -1 : 1);\n'+a)
+a='let i = clamp((parseInt(location.hash.slice(1), 10) || 1) - 1, 0, slides.length - 1);'
+assert result.count(a)==1
+result=result.replace(a,'let i = skipHidden(clamp((parseInt(location.hash.slice(1), 10) || 1) - 1, 0, slides.length - 1));')
+a="slides.forEach(s => { s.classList.add('active'); applyState(s, maxOf(s)); });"
+assert result.count(a)==1
+result=result.replace(a,"slides.filter(s => !s.hasAttribute('data-hidden')).forEach(s => { s.classList.add('active'); applyState(s, maxOf(s)); });")
+
+a='const n = clamp((a || 1) - 1, 0, slides.length - 1), s = b || 0;'
+assert result.count(a)==1
+result=result.replace(a,'const n = skipHidden(clamp((a || 1) - 1, 0, slides.length - 1)), s = b || 0;')
+a='if (n !== i || s !== step) render(n, s,'
+assert result.count(a)==1
+result=result.replace(a,'if (n !== i || s !== step || n !== (a || 1) - 1) render(n, s,')
 assert count==total_count
 result=result.replace('</head>','<style id="opening-visual-style">'+(root/'deck/opening.css').read_text()+'</style></head>',1)
 result=result.replace('<div id="deck">',(root/'deck/illustrations.svg').read_text()+'\n<div id="deck">',1)

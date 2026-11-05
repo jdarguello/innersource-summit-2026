@@ -18,7 +18,14 @@ const restoreOscarProfile=s=>s
 const coverDesign=s=>s.replaceAll("assets/oscar.png","assets/oscar.jpg").replaceAll("assets/juan.png","assets/headshot.jpg").replace(/data-time="[^"]+"/,'').replace(/<aside class="notes">[\s\S]*?<\/aside>/,'');
 assert.equal(coverDesign(restoreOscarProfile(clean(newSections[0]))),coverDesign(oldSections[0]));
 assert.deepEqual(newSections.slice(openingCount).map(clean).map(restoreOscarProfile),oldSections.slice(4));
-assert.equal(current.match(/<script>([\s\S]*?)<\/script>/)[1],original.match(/<script>([\s\S]*?)<\/script>/)[1]);
+const normalizeHiddenNavigation=s=>s
+ .replace(/  function skipHidden\(n, direction = 1\) \{[\s\S]*?\n  \}\n/,'')
+ .replace('    n = skipHidden(n, n < i ? -1 : 1);\n','')
+ .replace('let i = skipHidden(clamp((parseInt(location.hash.slice(1), 10) || 1) - 1, 0, slides.length - 1));','let i = clamp((parseInt(location.hash.slice(1), 10) || 1) - 1, 0, slides.length - 1);')
+ .replace("slides.filter(s => !s.hasAttribute('data-hidden')).forEach(s => { s.classList.add('active'); applyState(s, maxOf(s)); });","slides.forEach(s => { s.classList.add('active'); applyState(s, maxOf(s)); });")
+ .replace('const n = skipHidden(clamp((a || 1) - 1, 0, slides.length - 1)), s = b || 0;','const n = clamp((a || 1) - 1, 0, slides.length - 1), s = b || 0;')
+ .replace('if (n !== i || s !== step || n !== (a || 1) - 1) render(n, s,','if (n !== i || s !== step) render(n, s,');
+assert.equal(normalizeHiddenNavigation(current.match(/<script>([\s\S]*?)<\/script>/)[1]),original.match(/<script>([\s\S]*?)<\/script>/)[1]);
 assert.equal(current.match(/<style>([\s\S]*?)<\/style>/)[1],original.match(/<style>([\s\S]*?)<\/style>/)[1]);
 const browser=await chromium.launch();const page=await browser.newPage({viewport:{width:1280,height:720}});
 const errors=[],issues=[];page.on('pageerror',e=>errors.push(e.message));
@@ -37,6 +44,7 @@ assert.match(await page.locator('.p01 .speaker-bio').textContent(),/across 15 co
 assert.equal(await page.locator('.p23 .contact').first().locator('.r').textContent(),profile.role);
 let states=0;
 for(let n=1;n<=openingCount;n++){
+ if(schedule[n-1].hidden)continue;
  await page.goto(`${url}#${n}`);
  const max=Number(await page.locator('.slide.active').getAttribute('data-max'));
  for(let k=0;k<=max;k++){
@@ -82,5 +90,9 @@ const actionOpacity=text=>page.getByText(text,{exact:true}).evaluate(el=>getComp
 assert.equal(await actionOpacity('Wait for rollout'),'1');assert.equal(await actionOpacity('Verify health'),'0');
 await page.keyboard.press('ArrowRight');assert.equal(await actionOpacity('Wait for rollout'),'0');assert.equal(await actionOpacity('Verify health'),'1');
 await page.keyboard.press('ArrowLeft');assert.equal(await actionOpacity('Wait for rollout'),'1');assert.equal(await actionOpacity('Verify health'),'0');
-await page.goto('http://127.0.0.1:4173/presentation.html?print=1');assert.equal(await page.locator('.slide.active').count(),totalCount);
-const report={openingSlides:openingCount,openingDuration:'8:00',totalSlides:totalCount,states,originalCoverAndShell:'cover design, base CSS and player unchanged; cover timing/notes updated',technicalSlides:'19 unchanged; speaker metadata added',issues,errors,controls:'passed',motion:'flow dots, interrupt and reverse passed',responsive:'passed',print:`${totalCount} scenes`,inheritedLimitation:'Original assets/ files are absent in upstream repository; not modified by this change.'};await fs.writeFile(new URL('qa/integrated/report.json',root),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));await browser.close();if(issues.length||errors.length)process.exit(1);
+// Hidden slide 9 retains its source/number, but is skipped in both directions.
+await page.goto(`${url}#8`);await page.keyboard.press('a');await page.keyboard.press('ArrowRight');await page.waitForURL(/#10$/);
+await page.keyboard.press('ArrowLeft');await page.waitForURL(/#8\.3$/);
+await page.goto(`${url}#9`);await page.waitForURL(/#10$/);assert.equal(await page.locator('.intro09').isVisible(),false);
+await page.goto('http://127.0.0.1:4173/presentation.html?print=1');assert.equal(await page.locator('.slide.active').count(),totalCount-schedule.filter(s=>s.hidden).length);
+const report={openingSlides:openingCount,openingDuration:'7:10 visible (8:00 including hidden slide 9)',totalSlides:totalCount,states,originalCoverAndShell:'cover design, base CSS and player unchanged; cover timing/notes updated',technicalSlides:'19 unchanged; speaker metadata added',issues,errors,controls:'passed',motion:'flow dots, interrupt and reverse passed',responsive:'passed',print:`${totalCount-schedule.filter(s=>s.hidden).length} visible scenes`,inheritedLimitation:'Original assets/ files are absent in upstream repository; not modified by this change.'};await fs.writeFile(new URL('qa/integrated/report.json',root),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));await browser.close();if(issues.length||errors.length)process.exit(1);

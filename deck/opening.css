@@ -15,3 +15,4 @@
 .context-slide svg .ctx-effect-title{font-size:23px;fill:#FFF;font-weight:800}.context-slide svg .ctx-effect-small{font-size:16px;fill:#BAD8D5;font-weight:600}.context-slide svg .ctx-effect-note{font-size:14px;fill:#BAD8D5;letter-spacing:.4px}.context-slide svg .ctx-rule{fill:none;stroke:#74A5A2;stroke-opacity:.4;stroke-width:1}.context-slide svg .ctx-signal{fill:#FFC561;pointer-events:none}
 /* Supplied portraits, in the existing two-speaker cover layout. */
 .p01 .ph:has(img[src="assets/oscar.png"]){border:0;background:transparent}.p01 .ph:has(img[src="assets/oscar.png"]) .lab{display:none}.p01.title-slide .ph .photo[src="assets/oscar.png"]{left:0;top:0;object-position:50% 35%}.p01.title-slide .photo[src="assets/juan.png"]{object-position:50% 50%}
+.slide[data-hidden]{display:none!important}

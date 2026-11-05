@@ -69,3 +69,8 @@ Their circular framing is controlled by CSS in the existing cover.
 Oscar's current public profile is kept in deck/speaker.json. The cover and
 closing show “Oscar Lobaton Salas” and “SRE & FDE at Cobre”; the supplied full
 bio is included in the cover speaker notes for the host.
+
+Slide 9 (“Reuse the learning. Share the responsibility.”) is hidden from
+navigation and print, with its source and numbering preserved. Its flag is
+`hidden: true` in deck/storyboard.json. The visible opening is 7:10; re-enabling
+the 50-second slide restores the full eight-minute schedule.

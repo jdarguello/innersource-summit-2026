@@ -33,7 +33,8 @@
   },
   {
     "title": "Benefits and the working agreement",
-    "seconds": 50
+    "seconds": 50,
+    "hidden": true
   },
   {
     "title": "Context engineering: shared sources and dynamic runtime context",

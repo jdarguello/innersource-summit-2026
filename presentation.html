@@ -894,7 +894,22 @@ body.print-mode svg.dia .ln.live { animation: none; }
   [data-step] { visibility: visible !important; }
 }
 </style>
-</head>
+<style id="opening-visual-style">/* The original Summit tokens, typography, title rule and footer remain in use. */
+.opening .body{top:186px;height:464px}.opening svg.opening-art{width:1184px;height:424px;overflow:visible}.opening svg .oi-eyebrow{font-size:14px;letter-spacing:1.8px;fill:var(--muted);font-weight:800}.opening svg .oi-label{font-size:25px;font-weight:800;fill:var(--ink)}.opening svg .oi-small{font-size:18px;font-weight:600;fill:var(--muted)}.opening svg .oi-hero{font-size:30px;font-weight:800;fill:var(--ink)}.opening svg .ln{stroke-width:2.4}.opening svg [data-cue]{transform-box:fill-box;transform-origin:center}.opening .opening-line{position:absolute;left:0;top:441px;font-size:23px;font-weight:800;line-height:1.25;color:var(--ink);padding-left:23px;max-width:1150px}.opening .opening-line:before{content:'';position:absolute;left:0;top:4px;width:6px;height:22px;background:var(--yellow);border-radius:3px}.speaker-badge{position:absolute;right:48px;top:31px;display:flex;gap:10px;align-items:center;border:1px solid var(--teal-200);border-radius:999px;padding:7px 13px;font-size:12px;line-height:1.4;font-weight:800;letter-spacing:.07em;color:var(--teal-900);background:var(--teal-050);z-index:8}.speaker-badge .speaker-dot{width:7px;height:7px;border-radius:50%;background:var(--isc-teal)}.speaker-badge .speaker-scope{font-weight:700;opacity:.8}.slide.content.dark .speaker-badge,.slide.night .speaker-badge,.slide.teal .speaker-badge{background:var(--teal-900);color:var(--teal-100);border-color:var(--teal-600)}.slide.content.dark .speaker-dot,.slide.night .speaker-dot{background:var(--yellow)}.slide.title-slide .speaker-badge{top:103px;right:48px;font-size:11px}.slide.quote .speaker-badge{top:32px}.speaker-map{position:fixed;left:18px;bottom:15px;z-index:15;display:flex;gap:4px;opacity:0;transition:opacity .2s}.ui-on .speaker-map,.show-notes .speaker-map,.speaker-map:focus-within{opacity:1}.speaker-map a{padding:8px 12px;border:1px solid #74A5A2;border-radius:8px;background:#094949;color:#fff;font:12px var(--font-body);text-decoration:none}.speaker-map a b{color:var(--yellow)}.lockup img.asset-missing{display:none}.lockup.asset-fallback{gap:0}.opening-art use{pointer-events:none}
+@media print{.speaker-map{display:none}.speaker-badge{print-color-adjust:exact}}
+.slide .speaker-badge[data-speaker="JUAN DAVID"]{background:var(--yellow);border-color:var(--yellow);color:var(--teal-900)}.slide .speaker-badge[data-speaker="JUAN DAVID"] .speaker-dot{background:var(--teal-900)}
+.opening svg [data-poses]{transform-box:view-box;transform-origin:0 0;will-change:transform,opacity}
+/* Final finish: the Summit's white/teal canvas, with quieter material depth. */
+.slide.opening.light{background-image:radial-gradient(ellipse 650px 330px at 69% 50%,rgba(186,216,213,.20),transparent 76%)}
+.opening h2{letter-spacing:-.018em;text-wrap:balance}.opening h2 em{font-style:normal}.opening .opening-line{font-size:22px;letter-spacing:-.015em}.opening .speaker-badge{box-shadow:0 2px 6px #09494908}.opening svg use[href="#oi-project"],.opening svg use[href="#oi-workspace"],.opening svg use[href="#oi-parcel"],.opening svg use[href="#oi-code"],.opening svg use[href="#oi-repo"]{filter:drop-shadow(0px 7px 5px rgba(9,73,73,.12))}.opening.dark svg use[href="#oi-project"],.opening.dark svg use[href="#oi-workspace"],.opening.dark svg use[href="#oi-parcel"],.opening.dark svg use[href="#oi-code"]{filter:drop-shadow(0px 7px 5px rgba(0,20,19,.20))}.opening svg [data-loop]{transform-box:fill-box;transform-origin:center}.opening svg .oi-circulation{fill:none;stroke-width:3;stroke-dasharray:3 19;stroke-linecap:round;opacity:.55;pointer-events:none}.opening svg .oi-circulation.green{stroke:var(--ok)}.opening svg .oi-circulation.gold{stroke:var(--yellow)}html.reduce-motion .opening .oi-circulation{display:none}@media print{.opening .oi-circulation{display:none}.opening svg use{filter:none!important}}
+.opening.intro07 .opening-art{transform:translateY(8px)}.opening.intro07 svg g[data-loop="float"]{filter:drop-shadow(0px 9px 6px rgba(9,73,73,.10))}
+.opening.light h2 em{color:var(--teal-600)}
+#notesPanel .context-sources{font-size:13px;color:#BAD8D5}#notesPanel .context-sources a{color:#FFC561;text-underline-offset:3px}
+
+/* Context engineering: one dominant, material context object on the Summit canvas. */
+.slide.context-slide.dark{background-image:var(--contours),radial-gradient(ellipse 430px 330px at 54% 55%,#21616080,transparent 85%),linear-gradient(160deg,#0F4F4D,#094949 55%,#073B3B)}.context-slide svg .ctx-label{font-size:28px;font-weight:800;fill:#FFF}.context-slide svg .ctx-small{font-size:19px;font-weight:600;fill:#BAD8D5}.context-slide svg .ctx-eyebrow{font-size:15px;letter-spacing:1.5px;font-weight:800;fill:#BAD8D5}.context-slide svg .ctx-value{font-size:26px;font-weight:700;fill:#EDF6F5}.context-slide svg .ctx-status{font-size:25px;font-weight:800;fill:#FFC561}.context-slide svg .ctx-status-new{fill:#D9F3CE}.context-slide svg .ctx-refresh{stroke-width:2;opacity:.4}.context-slide .opening-line{font-size:22px}.context-slide svg [data-cue="assemble"]{filter:drop-shadow(0 12px 9px #001D1A30)}
+.context-slide svg .ctx-effect-title{font-size:23px;fill:#FFF;font-weight:800}.context-slide svg .ctx-effect-small{font-size:16px;fill:#BAD8D5;font-weight:600}.context-slide svg .ctx-effect-note{font-size:14px;fill:#BAD8D5;letter-spacing:.4px}.context-slide svg .ctx-rule{fill:none;stroke:#74A5A2;stroke-opacity:.4;stroke-width:1}.context-slide svg .ctx-signal{fill:#FFC561;pointer-events:none}
+</style></head>
 <body>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -909,10 +924,30 @@ body.print-mode svg.dia .ln.live { animation: none; }
   </defs>
 </svg>
 
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true"><defs>
+<linearGradient id="oi-deck-top" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#EDF6F5"/><stop offset="1" stop-color="#97BDBB"/></linearGradient>
+<linearGradient id="oi-metal" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#BAD8D5"/><stop offset="1" stop-color="#317775"/></linearGradient>
+<symbol id="oi-code" viewBox="0 0 180 155"><path d="M10 20L158 6L173 119L25 135Z" fill="#094949" stroke="#74A5A2" stroke-width="3"/><path d="M25 135L173 119L180 131L31 149L0 141Z" fill="#74A5A2"/><path d="M34 37L141 26" stroke="#BAD8D5" stroke-width="3"/><circle cx="32" cy="29" r="3" fill="#FFC561"/><circle cx="43" cy="28" r="3" fill="#0AA8A7"/><path d="M68 57L48 77L72 91M110 52L133 68L113 88M98 49L86 97" stroke="#FFC561" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="oi-books" viewBox="0 0 150 135"><path d="M12 43L115 9L145 27L42 63Z" fill="#BAD8D5" stroke="#216160" stroke-width="2"/><path d="M12 43V66L42 86V63Z" fill="#317775"/><path d="M42 63L145 27V49L42 86Z" fill="#EDF6F5" stroke="#74A5A2"/><path d="M7 71L106 37L137 57L38 91Z" fill="#0AA8A7" stroke="#216160" stroke-width="2"/><path d="M7 71V92L38 113V91Z" fill="#216160"/><path d="M38 91L137 57V79L38 113Z" fill="#EDF6F5" stroke="#74A5A2"/><path d="M20 105L119 71L147 88L48 122Z" fill="#FFC561" stroke="#D09B3E" stroke-width="2"/><path d="M20 105V117L48 134V122Z" fill="#B78331"/><path d="M48 122L147 88V101L48 134Z" fill="#EDF6F5" stroke="#74A5A2"/></symbol>
+<symbol id="oi-doc" viewBox="0 0 120 130"><path d="M20 12H75L106 42V118H20Z" fill="#97BDBB"/><path d="M12 5H72L100 33V112H12Z" fill="#EDF6F5" stroke="#74A5A2" stroke-width="2"/><path d="M72 5V33H100" fill="#BAD8D5" stroke="#74A5A2" stroke-width="2"/><path d="M29 49H81M29 65H81M29 81H64" stroke="#317775" stroke-width="4" stroke-linecap="round"/><path d="M28 97H48" stroke="#FFC561" stroke-width="6" stroke-linecap="round"/></symbol>
+<symbol id="oi-parcel" viewBox="0 0 70 75"><path d="M5 22L34 7L64 22L34 38Z" fill="#FFC561" stroke="#094949" stroke-width="2"/><path d="M5 22V52L34 68V38Z" fill="#D5A04A" stroke="#094949" stroke-width="2"/><path d="M34 38L64 22V52L34 68Z" fill="#FFE0A9" stroke="#094949" stroke-width="2"/><path d="M20 14L49 30V43" fill="none" stroke="#094949" stroke-width="4"/></symbol>
+<symbol id="oi-project" viewBox="0 0 220 230"><path d="M110 10L203 64V170L110 222L17 170V64Z" fill="#094949" stroke="#74A5A2" stroke-width="3"/><path d="M110 24L190 70V163L110 208L30 163V70Z" fill="none" stroke="#317775" stroke-width="2"/><path d="M84 83L59 111L84 137M139 83L164 111L139 137M122 76L103 146" stroke="#FFC561" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="110" cy="183" r="6" fill="#0AA8A7"/></symbol>
+<symbol id="oi-server" viewBox="0 0 90 125"><path d="M5 25L45 4L84 25L45 46Z" fill="#EDF6F5" stroke="#216160" stroke-width="2"/><path d="M5 25V99L45 120V46Z" fill="#74A5A2" stroke="#216160" stroke-width="2"/><path d="M45 46L84 25V99L45 120Z" fill="#216160" stroke="#094949" stroke-width="2"/><path d="M10 47L39 62M10 70L39 85M50 65L79 50M50 88L79 73" stroke="#BAD8D5" stroke-width="2"/><circle cx="18" cy="41" r="3" fill="#FFC561"/><circle cx="18" cy="63" r="3" fill="#FFC561"/><circle cx="18" cy="86" r="3" fill="#0AA8A7"/></symbol>
+<symbol id="oi-shield" viewBox="0 0 90 110"><path d="M45 7L79 21V56Q76 85 45 103Q14 85 11 56V21Z" fill="#0AA8A7" stroke="#094949" stroke-width="3"/><path d="M45 18L69 29V55Q66 75 45 91Q24 75 21 55V29Z" fill="#094949"/><path d="M29 52L40 63L60 39" stroke="#FFC561" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="oi-workspace" viewBox="0 0 100 100"><path d="M5 40L50 17L95 40L50 65Z" fill="#BAD8D5" stroke="#317775" stroke-width="2"/><path d="M5 40V67L50 92V65Z" fill="#74A5A2"/><path d="M50 65L95 40V67L50 92Z" fill="#216160"/><path d="M30 27L49 17L70 28L49 40Z" fill="#FFC561" stroke="#094949" stroke-width="2"/><path d="M30 27V48L49 59V40Z" fill="#D09B3E"/><path d="M49 40L70 28V49L49 59Z" fill="#FFE0A9"/></symbol>
+<symbol id="oi-route" viewBox="0 0 90 90"><circle cx="18" cy="70" r="10" fill="#FFC561"/><circle cx="69" cy="17" r="10" fill="#EDF6F5"/><circle cx="69" cy="70" r="10" fill="#0AA8A7"/><path d="M18 59V35Q18 17 36 17H55M29 70H55" fill="none" stroke="#BAD8D5" stroke-width="6" stroke-linecap="round"/><path d="M49 10L57 17L49 24M49 63L57 70L49 77" fill="none" stroke="#BAD8D5" stroke-width="4"/></symbol>
+<symbol id="oi-spark" viewBox="0 0 90 90"><path d="M27 48Q9 12 44 8Q81 11 64 48L56 60H34Z" fill="#FFC561" stroke="#094949" stroke-width="3"/><path d="M35 68H55M38 77H52M44 55V34M32 31L44 39L56 31" stroke="#BAD8D5" stroke-width="5" fill="none" stroke-linecap="round"/></symbol>
+<symbol id="oi-people" viewBox="0 0 100 90"><circle cx="29" cy="26" r="16" fill="#BAD8D5"/><circle cx="72" cy="26" r="16" fill="#FFC561"/><path d="M6 79V65Q9 46 29 46Q51 46 52 65V79Z" fill="#0AA8A7"/><path d="M49 79V65Q51 46 72 46Q94 46 95 65V79Z" fill="#74A5A2"/><path d="M42 29H57M52 23L58 29L52 35" fill="none" stroke="#094949" stroke-width="3"/></symbol>
+<symbol id="oi-release" viewBox="0 0 90 90"><path d="M13 17H54L81 45L42 83L13 54Z" fill="#FFC561" stroke="#094949" stroke-width="3"/><circle cx="29" cy="33" r="6" fill="#094949"/><path d="M35 57L45 66L64 45" stroke="#094949" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="oi-repo" viewBox="0 0 270 240"><path d="M24 62L93 48L115 63L244 43V198L24 226Z" fill="#216160" stroke="#094949" stroke-width="3"/><path d="M60 25L204 8L226 30V178L60 200Z" fill="#BAD8D5" stroke="#317775" stroke-width="2"/><path d="M80 44L210 28V176L80 193Z" fill="#EDF6F5" stroke="#74A5A2" stroke-width="2"/><path d="M120 67V130L168 113V58" stroke="#216160" stroke-width="5" fill="none"/><circle cx="120" cy="66" r="9" fill="#FFC561" stroke="#094949" stroke-width="3"/><circle cx="120" cy="129" r="9" fill="#FFC561" stroke="#094949" stroke-width="3"/><circle cx="168" cy="57" r="9" fill="#0AA8A7" stroke="#094949" stroke-width="3"/><path d="M24 117L244 90L256 104L238 220L24 239L9 224Z" fill="#74A5A2" stroke="#216160" stroke-width="3"/><path d="M24 133L244 106" stroke="#BAD8D5" stroke-width="2"/><path d="M89 171L160 162" stroke="#EDF6F5" stroke-width="7" stroke-linecap="round"/></symbol>
+<symbol id="oi-controller" viewBox="0 0 230 230"><circle cx="115" cy="115" r="103" fill="#EDF6F5" stroke="#97BDBB" stroke-width="2"/><circle cx="115" cy="115" r="83" fill="#094949" stroke="#317775" stroke-width="4"/><path d="M66 102A51 51 0 0 1 156 82L168 71V110H130L143 97A32 32 0 0 0 83 107Z" fill="#FFC561"/><path d="M164 128A51 51 0 0 1 74 148L62 159V120H100L87 133A32 32 0 0 0 147 123Z" fill="#0AA8A7"/><circle cx="115" cy="115" r="8" fill="#EDF6F5"/><path d="M115 4V20M115 210V226M4 115H20M210 115H226" stroke="#216160" stroke-width="5"/></symbol>
+<symbol id="oi-commit" viewBox="0 0 50 50"><path d="M25 3L47 25L25 47L3 25Z" fill="#FFC561" stroke="#094949" stroke-width="2"/><circle cx="25" cy="25" r="7" fill="#094949"/></symbol>
+<symbol id="oi-controller-shell" viewBox="0 0 230 230"><circle cx="115" cy="115" r="103" fill="#EDF6F5" stroke="#97BDBB" stroke-width="2"/><circle cx="115" cy="115" r="83" fill="#094949" stroke="#317775" stroke-width="4"/><circle cx="115" cy="115" r="8" fill="#EDF6F5"/><path d="M115 4V20M115 210V226M4 115H20M210 115H226" stroke="#216160" stroke-width="5"/></symbol><symbol id="oi-controller-rotor" viewBox="0 0 230 230"><path d="M66 102A51 51 0 0 1 156 82L168 71V110H130L143 97A32 32 0 0 0 83 107Z" fill="#FFC561"/><path d="M164 128A51 51 0 0 1 74 148L62 159V120H100L87 133A32 32 0 0 0 147 123Z" fill="#0AA8A7"/></symbol></defs></svg>
+
 <div id="deck">
 
 <!-- ══════════════ 01 · TITLE ══════════════ -->
-<section class="slide teal title-slide duo p01" data-title="Title" data-time="0:30">
+<section class="slide teal title-slide duo p01" data-title="Title" data-time="0:20"><div class="speaker-badge" data-speaker="OSCAR + JUAN"><span class="speaker-dot"></span><span>OSCAR + JUAN</span><span class="speaker-scope">WELCOME · 1 / 11</span></div>
   <style>
     /* fotos circulares; el hueco de la foto de Oscar queda como marcador si assets/oscar.jpg no existe */
     .p01 .ph {
@@ -952,344 +987,46 @@ body.print-mode svg.dia .ln.live { animation: none; }
     <div class="tag">#InnerSourceSummit</div>
   </div>
 
-  <aside class="notes">
-    <p><span class="t">0:30 · Title. · Juan David</span></p>
-    <p>Nothing spoken: introductions by the host; first words belong to 02.</p>
-    <p class="warn">⚠ Oscar's role and company are a placeholder («Role · Company …»), and assets/oscar.jpg does not exist yet (the dotted «photo» marker stands in). ⚠ The subtitle reuses the «what if» sentence of the abstract and of the LinkedIn post: the three surfaces must say the same thing. If the session starts with screen share before the host hands over, show the template's night cover as a holding slide (not built; it is not counted in the 23).</p>
-  </aside>
+  <aside class="notes"><p class="t">0:20 · Oscar + Juan · Welcome</p><p>We are Oscar Lobaton and Juan David Arguello Plata. I will start with the context and the opportunity: taking InnerSource from shared components to a shared platform foundation. Juan David will then show how the architecture works.</p></aside>
 </section>
 
-<!-- ══════════════ 02 · WHO WE ARE ══════════════ -->
-<section class="slide content light p02" data-title="Who we are, and why this talk" data-time="1:00">
-  <style>
-    .p02 .cols2 { gap: 28px; align-items: stretch; }
-    .p02 .who { padding: 32px 30px 28px; }
-    .p02 .who .top { display: flex; align-items: center; gap: 24px; margin-bottom: 20px; }
-    .p02 .who .ph { flex: none; width: 150px; height: 150px; border-radius: 50%; overflow: hidden; background: var(--surface-2); border: 3px solid var(--surface-2); }
-    .p02 .who .ph img { display: block; width: 100%; height: 100%; object-fit: cover; }
-    .p02 .who .ph.slot { position: relative; display: flex; align-items: center; justify-content: center; border: 3px dashed var(--line); }
-    .p02 .who .ph.slot .lab { font-size: 15px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
-    .p02 .who .ph.slot img { position: absolute; left: 0; top: 0; }
-    .p02 .who h3 { font-size: 24px; line-height: 1.2; margin-bottom: 6px; }
-    .p02 .who .role { font-size: 19px; font-weight: 700; line-height: 1.3; color: var(--ink); margin-bottom: 8px; }
-    .p02 .who .li { font-family: var(--font-mono); font-size: 17px; color: var(--muted); }
-    .p02 .who .bio { list-style: none; }
-    .p02 .who .bio li { font-size: 19px; line-height: 1.35; margin-bottom: 4px; color: var(--body-c); }
-    .p02 .who.tbd .role, .p02 .who.tbd .li, .p02 .who.tbd .bio li { color: var(--muted); }
-    .p02 .who.tbd .role { font-weight: 600; }
-    .p02 .callout { margin-top: 34px; font-size: 24px; line-height: 1.4; padding: 20px 28px; }
-  </style>
-  <h2>Who we are, and why this talk</h2>
-  <div class="body">
-    <div class="cols2" data-step="0" data-effect="stagger">
-      <div class="card who tbd">
-        <div class="top">
-          <div class="ph slot"><span class="lab">photo</span><img src="assets/oscar.jpg" alt="Oscar Lobaton" data-optional></div>
-          <div>
-            <h3>Oscar Lobaton</h3>
-            <div class="role">Role, Company</div>
-            <div class="li">LinkedIn /in/handle</div>
-          </div>
-        </div>
-        <ul class="bio">
-          <li>⚠ what Oscar owns (platform? infrastructure? security?)</li>
-        </ul>
-      </div>
-      <div class="card who">
-        <div class="top">
-          <div class="ph"><img src="assets/headshot.jpg" alt="Juan David Arguello Plata"></div>
-          <div>
-            <h3>Juan David Arguello Plata</h3>
-            <div class="role">InnerSource Program Lead, Credicorp</div>
-            <div class="li">LinkedIn /in/jdarp</div>
-          </div>
-        </div>
-        <ul class="bio">
-          <li>MSc Computer Science (Bath) · Kubestronaut</li>
-          <li>Postgraduate in AI &amp; ML (UT Austin)</li>
-        </ul>
-      </div>
-    </div>
-    <div class="callout" data-step="1" data-effect="enter"><b>Why us.</b> We work inside a holding group: several companies, several platform teams, the same problems arriving one after another. This talk is the roadmap we wish we had.</div>
-  </div>
-  <aside class="notes">
-    <p><span class="t">1:00 · Who we are. · both</span></p>
-    <p><em>(→ the two speaker cards)</em> Each speaker: one sentence, name and what they do all day. <em>(→ 1: the callout)</em> Then Juan David: we work inside a holding group, several companies, several platform teams, the same problems arriving one after another; this talk is the roadmap we wish we had. And the promise: by the end you'll have a five-stage roadmap and four mechanisms you can take back to your own platform repo.</p>
-    <p class="warn">⚠ Oscar's card is a placeholder (role, company, two bio lines, LinkedIn handle, photo `assets/oscar.jpg`): fill it in with what he owns (platform? infrastructure? security?). Verify LinkedIn handle /in/jdarp (taken from the Istio Day deck). Juan David's bio lines also come from the Istio Day deck (0b). "Credicorp" is on the committee card; do not name subsidiaries unless Oscar's company is one and he agrees. Keep the company's internal status out: this talk is a roadmap, not "we run this".</p>
-  </aside>
-</section>
+<section class="slide content light opening intro02" data-title="Share the work. Move the knowledge." data-time="0:45"><div class="speaker-badge" data-speaker="OSCAR"><span class="speaker-dot"></span><span>OSCAR</span><span class="speaker-scope">INTRODUCTION · 2 / 11</span></div>
+<h2><span class="k">Oscar · The opportunity</span>Share the work. <em>Move the knowledge.</em></h2>
+<div class="body"><svg class="dia opening-art" viewBox="0 0 1184 456" role="img" aria-label="Share the work. Move the knowledge."><g data-step="0" data-effect="fade" ><text class="oi-eyebrow" x="30" y="28" text-anchor="start">THE ABC OF INNERSOURCE</text><g data-cue="tilt" ><use href="#oi-code" x="22" y="62" width="165" height="145"/></g><text class="oi-label" x="105" y="232" text-anchor="middle">Code</text><g data-cue="rise" ><use href="#oi-books" x="217" y="74" width="145" height="132"/></g><text class="oi-label" x="290" y="232" text-anchor="middle">Libraries</text><g data-cue="rise" ><use href="#oi-doc" x="125" y="249" width="120" height="118"/></g><text class="oi-small" x="277" y="326" text-anchor="start">Documentation</text></g><g data-step="1" data-effect="flow" ><path class="ln  " d="M380 180C435 180 427 167 480 167" marker-end="url(#ar-teal)"/><path class="ln  " d="M690 167C745 167 746 180 800 180" marker-end="url(#ar-teal)"/></g><g data-step="1" data-effect="fade" ><g data-cue="assemble" ><use href="#oi-project" x="475" y="60" width="225" height="225"/></g><text class="oi-small" x="587" y="318" text-anchor="middle">Discover · reuse · contribute</text></g><g data-step="1" data-effect="fade" ><g data-cue="rise" ><g transform="translate(835 109)"><ellipse cx="45" cy="112" rx="48" ry="13" fill="#094949" opacity=".1"/><path d="M12 78Q15 45 45 45Q76 45 79 78L86 102H5Z" fill="#317775"/><circle cx="45" cy="24" r="22" fill="#BAD8D5" stroke="#216160" stroke-width="2"/><path d="M28 10Q45 -4 64 12" stroke="#094949" stroke-width="10" fill="none" stroke-linecap="round"/><rect x="-5" y="75" width="100" height="64" rx="7" fill="#EDF6F5" stroke="#74A5A2" stroke-width="2"/><path d="M-10 140H100L107 147H-18Z" fill="#216160"/><path d="M33 106L43 96L53 106L43 116Z" fill="#FFC561"/></g><g transform="translate(985 109)"><ellipse cx="45" cy="112" rx="48" ry="13" fill="#094949" opacity=".1"/><path d="M12 78Q15 45 45 45Q76 45 79 78L86 102H5Z" fill="#0AA8A7"/><circle cx="45" cy="24" r="22" fill="#BAD8D5" stroke="#216160" stroke-width="2"/><path d="M28 10Q45 -4 64 12" stroke="#094949" stroke-width="10" fill="none" stroke-linecap="round"/><rect x="-5" y="75" width="100" height="64" rx="7" fill="#EDF6F5" stroke="#74A5A2" stroke-width="2"/><path d="M-10 140H100L107 147H-18Z" fill="#216160"/><path d="M33 106L43 96L53 106L43 116Z" fill="#FFC561"/></g></g><text class="oi-label" x="930" y="306" text-anchor="middle">Another team adopts it</text></g><g data-step="2" data-effect="flow" ><path class="ln ok d" d="M1025 315C1080 405 780 429 713 249" marker-end="url(#ar-ok)"/><path class="oi-circulation green" data-loop="route" data-period="5000" d="M1025 315C1080 405 780 429 713 249" aria-hidden="true"/><text class="oi-small" x="820" y="395" text-anchor="middle">A reviewed PR brings the learning back</text></g><g data-step="1" data-effect="fade" ><g data-cue="travel" data-from="-358,-20" data-duration="1300"><g data-loop="float" data-amplitude="2.5" data-period="5400"><use href="#oi-parcel" x="754" y="145" width="58" height="58"/></g></g></g></svg><p class="opening-line" data-step="2" data-effect="enter">Familiar code. Familiar conventions. Easier movement between teams.</p></div>
+<aside class="notes"><p class="t">0:45 · Oscar · Opening 2/11</p><p>Let's start with the ABC. InnerSource brings open source practices inside an organization. Teams make source code, libraries and documentation discoverable and reusable. [Step 1] Another team can adopt that work and understand the conventions behind it. [Step 2] When they need an improvement, they can propose it through a reviewed pull request. That contribution path is what turns reuse into shared evolution. The maintainers still care for the project, while people beyond the original team can help it improve. Keep this picture: publish, consume, contribute back. We will use the same picture again, but with a much larger artifact.</p></aside></section>
 
-<!-- ══════════════ 03 · INNERSOURCE REGISTRY ══════════════ -->
-<section class="slide content light p03" data-title="InnerSource in one picture: the internal registry" data-time="1:30">
-  <style>
-    .p03 .grid { display: grid; grid-template-columns: 780px 1fr; gap: 40px; align-items: start; }
-    .p03 .fig { width: 780px; position: relative; }
-    /* logos ride over the figure as <img> (brief §6: no raster element inside an SVG); the viewBox is 780 wide, so 1 unit = 1 px and left/top are SVG coordinates */
-    .p03 .logo { position: absolute; width: 44px; height: 44px; border-radius: 10px; overflow: hidden; }
-    .p03 .logo img { display: block; width: 100%; height: 100%; object-fit: cover; }
-    .p03 .logo:not(:has(img)) { border: 2px dashed var(--teal-200); }   /* dotted marker while a logo file is missing (img data-optional) */
-    .p03 .logo.isc { width: 52px; height: 60px; left: 364px; top: 54px; border-radius: 0; overflow: visible; }
-    .p03 .logo.isc img { object-fit: contain; }
-    .p03 .logo.a1 { left: 11px; top: 48px; }  .p03 .logo.a2 { left: 11px; top: 128px; }  .p03 .logo.a3 { left: 11px; top: 208px; }
-    .p03 .logo.b1 { left: 569px; top: 48px; } .p03 .logo.b2 { left: 569px; top: 128px; } .p03 .logo.b3 { left: 569px; top: 208px; }
-    .p03 .roles { padding-top: 34px; }
-    .p03 .roles .bullets li { font-size: 19px; line-height: 1.35; margin-bottom: 18px; }
-    .p03 .callout { margin-top: 10px; }
-  </style>
-  <h2><span class="k">Part 1 · The basics</span>Publish once, consume many, <em>contribute back</em></h2>
-  <div class="body">
-    <div class="sub">InnerSource in one picture: the internal registry</div>
-    <div class="grid">
-      <div class="fig">
-        <svg class="dia" viewBox="0 0 780 340" role="img" aria-label="InnerSource in one picture: teams publish versioned artifacts into an internal registry, the companies of the group (Yape, BCP, Credicorp) consume them pinned to a version, and a consumer contributes back with a pull request">
-  <g data-step="0" data-effect="dia">
-    <g class="piece" id="f03-registry">
-      <polygon class="hex y" points="390.0,35.0 489.6,92.5 489.6,207.5 390.0,265.0 290.4,207.5 290.4,92.5"/>
-      <text class="ttl d" text-anchor="middle"><tspan x="390" y="138">internal</tspan><tspan x="390" y="158">registry</tspan></text>
-      <text class="txt d" text-anchor="middle"><tspan x="390" y="186">your PyPI · Maven ·</tspan><tspan x="390" y="203">npm · container registry</tspan></text>
-    </g>
-  </g>
-  <g data-step="1" data-effect="flow">
-    <g class="piece" id="f03-producers">
-      <rect class="box w" x="1" y="36" width="220" height="68" rx="12"/>
-      <text class="ttl" x="66" y="62">library</text>
-      <text class="txt" x="66" y="79">a framework,</text>
-      <text class="txt" x="66" y="94">a SDK</text>
-      <rect class="box w" x="1" y="116" width="220" height="68" rx="12"/>
-      <text class="ttl" x="66" y="142">template</text>
-      <text class="txt" x="66" y="159">a service skeleton,</text>
-      <text class="txt" x="66" y="174">a pipeline</text>
-      <rect class="box w" x="1" y="196" width="220" height="68" rx="12"/>
-      <text class="ttl" x="66" y="222">service</text>
-      <text class="txt" x="66" y="239">a container image</text>
-      <text class="txt" x="66" y="254">+ its chart</text>
-    </g>
-    <path class="ln" data-dim-at="3" d="M222,70 L290.4,100" marker-end="url(#ar-teal)" data-to="f03-registry"/>
-    <path class="ln" data-dim-at="3" d="M222,150 L290.4,150" marker-end="url(#ar-teal)" data-to="f03-registry"/>
-    <path class="ln" data-dim-at="3" d="M222,230 L290.4,200" marker-end="url(#ar-teal)" data-to="f03-registry"/>
-    <text class="edge-lab" x="256" y="26" text-anchor="middle">publish</text>
-  </g>
-  <g data-step="2" data-effect="flow">
-    <g class="piece" id="f03-consumers">
-      <rect class="box w" x="559" y="36" width="220" height="68" rx="12"/>
-      <text class="ttl" x="624" y="67">Yape</text>
-      <text class="txt mono" x="624" y="87">v1.4.0</text>
-      <rect class="box w" x="559" y="116" width="220" height="68" rx="12"/>
-      <text class="ttl" x="624" y="147">BCP</text>
-      <text class="txt mono" x="624" y="167">v1.4.0</text>
-      <rect class="box w" x="559" y="196" width="220" height="68" rx="12"/>
-      <text class="ttl" x="624" y="227">Credicorp</text>
-      <text class="txt mono" x="624" y="247">v1.4.0</text>
-    </g>
-    <path class="ln" data-dim-at="3" d="M489.6,100 L558,70" marker-end="url(#ar-teal)" data-to="f03-consumers"/>
-    <path class="ln" data-dim-at="3" d="M489.6,150 L558,150" marker-end="url(#ar-teal)" data-to="f03-consumers"/>
-    <path class="ln" data-dim-at="3" d="M489.6,200 L558,230" marker-end="url(#ar-teal)" data-to="f03-consumers"/>
-    <text class="edge-lab" x="524" y="26" text-anchor="middle">consume · pinned</text>
-  </g>
-  <g data-step="3" data-effect="flow">
-    <path class="ln d" d="M669,264 V289 Q669,305 653,305 H406 Q390,305 390,289 V267" marker-end="url(#ar-teal)" data-to="f03-registry"/>
-    <text class="edge-lab" x="530" y="293" text-anchor="middle">contribute back (PR)</text>
-    <text class="txt" x="530" y="327" text-anchor="middle">reviewed by a Trusted Committer</text>
-  </g>
-</svg>
-        <div class="logo isc" data-step="0" data-effect="rise"><img src="assets/innersource-commons-logo.png" alt="InnerSource Commons"></div>
-        <div class="logo a1" data-step="1" data-effect="rise"><img src="assets/library-logo-crop.png" alt=""></div>
-        <div class="logo a2" data-step="1" data-effect="rise"><img src="assets/template-logo-crop.png" alt=""></div>
-        <div class="logo a3" data-step="1" data-effect="rise"><img src="assets/service-logo-crop.png" alt="" data-optional></div>
-        <div class="logo b1" data-step="2" data-effect="rise"><img src="assets/yape-logo.png" alt="Yape"></div>
-        <div class="logo b2" data-step="2" data-effect="rise"><img src="assets/bcp-logo.png" alt="BCP"></div>
-        <div class="logo b3" data-step="2" data-effect="rise"><img src="assets/credicorp-logo.png" alt="Credicorp"></div>
-      </div>
-      <div class="roles" data-step="3" data-effect="rows" data-delay="1100">
-        <ul class="bullets">
-          <li><b>Contributor</b> opens a pull request instead of a ticket</li>
-          <li><b>Trusted Committer</b> reviews and merges the pull request</li>
-          <li><b>Consumer</b> pulls the artifact, pinned to a version</li>
-        </ul>
-      </div>
-    </div>
-    <div class="callout" data-step="3" data-effect="enter" data-delay="1500"><b>An artifact is packaged or containerized once;</b> whoever needs a change contributes it instead of waiting for it.</div>
-  </div>
-  <aside class="notes">
-    <p><span class="t">1:30 · InnerSource in one picture. · Juan David</span></p>
-    <p>InnerSource is open source practice inside the company walls. The part that makes it work is boring: a registry. <em>(→ step 0: the registry hexagon and its caption)</em> A team packages a framework, a template or a service, publishes it with a version, <em>(→ step 1: producers and the publish arrows)</em> and any other team pulls it. <em>(→ step 2: the consumers and the consume · pinned arrows)</em> When the consumer needs something the artifact doesn't do, they don't open a ticket: they open a pull request, and a Trusted Committer reviews it. <em>(→ step 3: the dashed contribute-back arrow, the three roles and the callout)</em> The registry is the InnerSource Portal made concrete. Keep this picture: the rest of the talk draws it again with different boxes.</p>
-    <p class="warn">⚠ "InnerSource Portal" and "Trusted Committer" are names of patterns in the InnerSource Commons patterns book: verify spelling and that the Portal pattern still exists under that name at patterns.innersourcecommons.org. The three roles are stated the way the audience uses them; don't invent a fourth. The one-line role descriptions and the pin v1.4.0 are illustrative wording for this slide, not from slides.md. The three consumers are brands of the Credicorp group (Yape · BCP · Credicorp, logos in assets/) as an illustration of the holding, not a claim about what they consume today. The producer logos are square crops of the illustrations in assets/ (*-logo-crop.png); the img keeps data-optional so a missing file degrades to a dotted marker.</p>
-  </aside>
-</section>
+<section class="slide content light opening intro03" data-title="Shared work creates familiar ground." data-time="0:35"><div class="speaker-badge" data-speaker="OSCAR"><span class="speaker-dot"></span><span>OSCAR</span><span class="speaker-scope">INTRODUCTION · 3 / 11</span></div><h2><span class="k">Oscar · The opportunity</span>Shared work creates <em>familiar ground.</em></h2><div class="body"><svg class="dia opening-art" viewBox="0 0 1184 456" role="img" aria-label="Shared work creates familiar ground."><g data-step="0" data-effect="fade"><text class="oi-eyebrow" x="100" y="30" text-anchor="start">TEAM A</text><text class="oi-eyebrow" x="925" y="30" text-anchor="start">TEAM B</text><g transform="translate(50 126) scale(0.95)"><path d="M0 80L150 0L300 80L150 160Z" fill="url(#oi-deck-top)" stroke="#74A5A2" stroke-width="2"/><path d="M0 80V106L150 186V160Z" fill="#317775"/><path d="M150 160L300 80V106L150 186Z" fill="#216160"/></g><g transform="translate(850 126) scale(0.95)"><path d="M0 80L150 0L300 80L150 160Z" fill="url(#oi-deck-top)" stroke="#74A5A2" stroke-width="2"/><path d="M0 80V106L150 186V160Z" fill="#317775"/><path d="M150 160L300 80V106L150 186Z" fill="#216160"/></g><use href="#oi-code" x="90" y="64" width="135" height="120"/><use href="#oi-code" x="894" y="64" width="135" height="120"/><text class="oi-small" x="190" y="365" text-anchor="middle">Builds the shared project</text><text class="oi-small" x="990" y="365" text-anchor="middle">Uses the shared project</text></g><g data-step="0" data-effect="flow"><path class="ln" d="M360 255H815" marker-end="url(#ar-teal)"/></g><g data-poses='{"0":{"transform":"translate(0,0)","opacity":"1"},"1":{"transform":"translate(540px,0)","opacity":"1"},"2":{"transform":"translate(540px,0)","opacity":"1"}}'><g transform="translate(258 120)"><ellipse cx="38" cy="125" rx="45" ry="11" fill="#094949" opacity=".15"/><circle cx="38" cy="22" r="21" fill="#BAD8D5" stroke="#216160" stroke-width="2"/><path d="M17 17Q38 -4 59 17" stroke="#094949" fill="none" stroke-width="7" stroke-linecap="round"/><path d="M4 94V70Q7 46 38 46Q69 46 72 70V94Z" fill="#0AA8A7" stroke="#216160" stroke-width="2"/><path d="M23 94V121M53 94V121" stroke="#216160" stroke-width="12" stroke-linecap="round"/><path d="M53 68H94V107H53Z" fill="#FFC561" stroke="#094949" stroke-width="2"/></g></g><g data-step="1" data-effect="fade"><text class="oi-hero" x="590" y="92" text-anchor="middle">Knowledge moves with people.</text><g data-cue="tilt" ><use href="#oi-books" x="545" y="127" width="105" height="105"/></g></g><g data-step="2" data-effect="fade"><text class="oi-label" x="590" y="350" text-anchor="middle">Interfaces · examples · conventions</text></g></svg><p class="opening-line" data-step="2" data-effect="enter">Less rediscovery when people collaborate across teams.</p></div><aside class="notes"><p class="t">0:35 · Oscar · Opening 3/11</p><p>Sharing an artifact also shares decisions. The documentation explains why an interface works that way; the examples show how to use it. [Step 1] Now imagine an engineer moving from one team to another, or simply helping another team deliver. [Step 2] Familiar interfaces, examples and conventions give that person something they already recognize. This can reduce rediscovery and make collaboration easier. We want to preserve that advantage as the things teams share become larger.</p></aside></section>
 
-<!-- ══════════════ 04 · THE PACE ══════════════ -->
-<section class="slide content dark p04" data-title="The pace: DevOps → Platform Engineering → Agentic Platforms" data-time="1:30">
-  <style>
-    /* the figure is 560 wide (1 unit = 1 px), anchored at the top-left of .body; every overlay below uses figure coordinates */
-    .p04 .fig { position: absolute; left: 0; top: 0; width: 560px; }
-    .p04 .mk { position: absolute; width: 180px; height: 56px; display: flex; justify-content: center; align-items: flex-end; }
-    .p04 .mk.a { left: -5px; top: 104px; }
-    .p04 .mk.b { left: 182px; top: 52px; }
-    .p04 .mk.c { left: 369px; top: 0px; }
-    .p04 .marker { display: flex; align-items: center; padding: 4px; background: var(--teal-800); border: 1.5px solid var(--ink); border-radius: 12px; }
-    .p04 .marker .logo { width: 44px; height: 44px; flex: none; border-radius: 10px; overflow: hidden; }
-    .p04 .marker .logo img { display: block; width: 100%; height: 100%; object-fit: cover; }
-    .p04 .marker .logo.bcp img { transform: scale(1.5); }   /* the wordmark sits small in a square PNG: crop in by 1.5x so it reads at 44 px (asset untouched) */
-    /* the five storeys, one stage per floor (centres y = 286, 234, 182, 130, 78); the level line is the ::before of each stage */
-    .p04 .stage { position: absolute; left: 604px; width: 580px; height: 52px; display: flex; align-items: center; gap: 12px; }
-    .p04 .stage.s0 { top: 260px; } .p04 .stage.s1 { top: 208px; } .p04 .stage.s2 { top: 156px; } .p04 .stage.s3 { top: 104px; } .p04 .stage.s4 { top: 52px; }
-    .p04 .stage::before { content: ''; position: absolute; left: -64px; width: 56px; top: 50%; border-top: 2px dashed var(--muted); }
-    .p04 .stage .no { width: 36px; height: 41px; flex: none; display: flex; align-items: center; justify-content: center; background: var(--surface-2); color: var(--ink); font-family: var(--font-display); font-weight: 900; font-size: 19px; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); }
-    .p04 .stage h3 { margin: 0; font-size: 20px; font-weight: 800; line-height: 1.2; color: var(--ink); }
-    .p04 .stage p { margin: 0; font-size: 17px; line-height: 1.25; color: var(--body-c); hyphens: manual; }
-    .p04 .hold { position: absolute; left: 0; right: 0; top: 340px; display: flex; align-items: center; gap: 22px; }
-    .p04 .holding { margin: 0; font-size: 19px; line-height: 1.3; color: var(--body-c); white-space: nowrap; }
-    .p04 .holding b { color: var(--ink); font-weight: 800; }
-    .p04 .hold .tags { flex-wrap: nowrap; gap: 10px; }
-    .p04 .hold .tag { font-size: 17px; padding: 4px 14px 5px; white-space: nowrap; background: transparent; border: 1.5px solid var(--red); color: var(--ink); }
-    .p04 .callout { position: absolute; left: 0; right: 0; bottom: 0; padding: 10px 22px; }
-  </style>
-  <h2><span class="k">Part 1 · The basics</span>The pace keeps rising; the mistakes repeat</h2>
-  <div class="body">
-    <div class="fig">
-      <svg class="dia" viewBox="0 0 560 320" role="img" aria-label="The same five-storey building drawn three times, side by side, each under construction at a different height: the first has two storeys, the second and third have three, the third also has scaffolding on its fourth storey; each sits inside a dashed ghost outline of the finished five-storey building, and in each the second storey is red and cracked.">
-<line x1="0" y1="312" x2="560" y2="312" stroke="var(--teal-100)" stroke-opacity=".35" stroke-width="2"/>
-<g data-step="0" data-effect="dia">
-<g class="piece" id="f04-ghost">
-<rect x="29" y="52" width="112" height="260" fill="none" stroke="var(--teal-100)" stroke-opacity=".5" stroke-width="2" stroke-dasharray="6 5"/>
-<polygon points="141,52 157,48 157,312 141,312" fill="none" stroke="var(--teal-100)" stroke-opacity=".5" stroke-width="2" stroke-dasharray="6 5"/>
-<path d="M29,104 H141 L157,100" fill="none" stroke="var(--teal-100)" stroke-opacity=".42" stroke-width="2" stroke-dasharray="5 5"/>
-<path d="M29,156 H141 L157,152" fill="none" stroke="var(--teal-100)" stroke-opacity=".42" stroke-width="2" stroke-dasharray="5 5"/>
-<path d="M29,208 H141 L157,204" fill="none" stroke="var(--teal-100)" stroke-opacity=".42" stroke-width="2" stroke-dasharray="5 5"/>
-<path d="M29,260 H141 L157,256" fill="none" stroke="var(--teal-100)" stroke-opacity=".42" stroke-width="2" stroke-dasharray="5 5"/>
-<rect x="216" y="52" width="112" height="260" fill="none" stroke="var(--teal-100)" stroke-opacity=".5" stroke-width="2" stroke-dasharray="6 5"/>
-<polygon points="328,52 344,48 344,312 328,312" fill="none" stroke="var(--teal-100)" stroke-opacity=".5" stroke-width="2" stroke-dasharray="6 5"/>
-<path d="M216,104 H328 L344,100" fill="none" stroke="var(--teal-100)" stroke-opacity=".42" stroke-width="2" stroke-dasharray="5 5"/>
-<path d="M216,156 H328 L344,152" fill="none" stroke="var(--teal-100)" stroke-opacity=".42" stroke-width="2" stroke-dasharray="5 5"/>
-<path d="M216,208 H328 L344,204" fill="none" stroke="var(--teal-100)" stroke-opacity=".42" stroke-width="2" stroke-dasharray="5 5"/>
-<path d="M216,260 H328 L344,256" fill="none" stroke="var(--teal-100)" stroke-opacity=".42" stroke-width="2" stroke-dasharray="5 5"/>
-<rect x="403" y="52" width="112" height="260" fill="none" stroke="var(--teal-100)" stroke-opacity=".5" stroke-width="2" stroke-dasharray="6 5"/>
-<polygon points="515,52 531,48 531,312 515,312" fill="none" stroke="var(--teal-100)" stroke-opacity=".5" stroke-width="2" stroke-dasharray="6 5"/>
-<path d="M403,104 H515 L531,100" fill="none" stroke="var(--teal-100)" stroke-opacity=".42" stroke-width="2" stroke-dasharray="5 5"/>
-<path d="M403,156 H515 L531,152" fill="none" stroke="var(--teal-100)" stroke-opacity=".42" stroke-width="2" stroke-dasharray="5 5"/>
-<path d="M403,208 H515 L531,204" fill="none" stroke="var(--teal-100)" stroke-opacity=".42" stroke-width="2" stroke-dasharray="5 5"/>
-<path d="M403,260 H515 L531,256" fill="none" stroke="var(--teal-100)" stroke-opacity=".42" stroke-width="2" stroke-dasharray="5 5"/>
-</g>
-<g class="piece" id="f04-tower-a">
-<rect x="29" y="260" width="112" height="52" fill="var(--teal-600)" stroke="var(--teal-900)" stroke-width="1.5"/>
-<polygon points="141,260 157,256 157,312 141,312" fill="var(--teal-600)" stroke="var(--teal-900)" stroke-width="1.5"/>
-<polygon points="141,260 157,256 157,312 141,312" fill="var(--teal-900)" fill-opacity=".25"/>
-<rect x="40.2" y="278" width="14" height="16" rx="2" fill="var(--teal-900)"/><rect x="65.4" y="278" width="14" height="16" rx="2" fill="var(--teal-900)"/><rect x="90.6" y="278" width="14" height="16" rx="2" fill="var(--teal-900)"/><rect x="115.8" y="278" width="14" height="16" rx="2" fill="var(--teal-900)"/><rect x="145" y="276" width="8" height="16" rx="2" fill="var(--teal-900)"/>
-<rect x="29" y="208" width="112" height="52" fill="var(--teal-400)" stroke="var(--teal-900)" stroke-width="1.5"/>
-<polygon points="141,208 157,204 157,256 141,260" fill="var(--teal-400)" stroke="var(--teal-900)" stroke-width="1.5"/>
-<polygon points="141,208 157,204 157,256 141,260" fill="var(--teal-900)" fill-opacity=".25"/>
-<rect x="40.2" y="226" width="14" height="16" rx="2" fill="var(--teal-800)"/><rect x="65.4" y="226" width="14" height="16" rx="2" fill="var(--teal-800)"/><rect x="90.6" y="226" width="14" height="16" rx="2" fill="var(--teal-800)"/><rect x="115.8" y="226" width="14" height="16" rx="2" fill="var(--teal-800)"/><rect x="145" y="224" width="8" height="16" rx="2" fill="var(--teal-800)"/>
-<rect x="83" y="164" width="4" height="44" fill="var(--teal-100)"/>
-<rect x="71" y="164" width="60" height="3" fill="var(--teal-100)"/>
-<rect x="71" y="167" width="8" height="9" fill="var(--teal-100)"/>
-<line x1="125" y1="167" x2="125" y2="186" stroke="var(--teal-100)" stroke-width="1.5"/>
-<rect x="112" y="186" width="26" height="6" fill="var(--teal-100)"/>
-</g>
-<g class="piece" id="f04-tower-b">
-<rect x="216" y="260" width="112" height="52" fill="var(--teal-600)" stroke="var(--teal-900)" stroke-width="1.5"/>
-<polygon points="328,260 344,256 344,312 328,312" fill="var(--teal-600)" stroke="var(--teal-900)" stroke-width="1.5"/>
-<polygon points="328,260 344,256 344,312 328,312" fill="var(--teal-900)" fill-opacity=".25"/>
-<rect x="227.2" y="278" width="14" height="16" rx="2" fill="var(--teal-900)"/><rect x="252.4" y="278" width="14" height="16" rx="2" fill="var(--teal-900)"/><rect x="277.6" y="278" width="14" height="16" rx="2" fill="var(--teal-900)"/><rect x="302.8" y="278" width="14" height="16" rx="2" fill="var(--teal-900)"/><rect x="332" y="276" width="8" height="16" rx="2" fill="var(--teal-900)"/>
-<rect x="216" y="208" width="112" height="52" fill="var(--teal-400)" stroke="var(--teal-900)" stroke-width="1.5"/>
-<polygon points="328,208 344,204 344,256 328,260" fill="var(--teal-400)" stroke="var(--teal-900)" stroke-width="1.5"/>
-<polygon points="328,208 344,204 344,256 328,260" fill="var(--teal-900)" fill-opacity=".25"/>
-<rect x="227.2" y="226" width="14" height="16" rx="2" fill="var(--teal-800)"/><rect x="252.4" y="226" width="14" height="16" rx="2" fill="var(--teal-800)"/><rect x="277.6" y="226" width="14" height="16" rx="2" fill="var(--teal-800)"/><rect x="302.8" y="226" width="14" height="16" rx="2" fill="var(--teal-800)"/><rect x="332" y="224" width="8" height="16" rx="2" fill="var(--teal-800)"/>
-<rect x="216" y="156" width="112" height="52" fill="var(--teal-400)" stroke="var(--teal-900)" stroke-width="1.5"/>
-<polygon points="328,156 344,152 344,204 328,208" fill="var(--teal-400)" stroke="var(--teal-900)" stroke-width="1.5"/>
-<polygon points="328,156 344,152 344,204 328,208" fill="var(--teal-900)" fill-opacity=".25"/>
-<rect x="227.2" y="174" width="14" height="16" rx="2" fill="var(--teal-800)"/><rect x="252.4" y="174" width="14" height="16" rx="2" fill="var(--teal-800)"/><rect x="277.6" y="174" width="14" height="16" rx="2" fill="var(--teal-800)"/><rect x="302.8" y="174" width="14" height="16" rx="2" fill="var(--teal-800)"/><rect x="332" y="172" width="8" height="16" rx="2" fill="var(--teal-800)"/>
-<rect x="270" y="112" width="4" height="44" fill="var(--teal-100)"/>
-<rect x="258" y="112" width="60" height="3" fill="var(--teal-100)"/>
-<rect x="258" y="115" width="8" height="9" fill="var(--teal-100)"/>
-<line x1="312" y1="115" x2="312" y2="134" stroke="var(--teal-100)" stroke-width="1.5"/>
-<rect x="299" y="134" width="26" height="6" fill="var(--teal-100)"/>
-</g>
-<g class="piece" id="f04-tower-c">
-<rect x="403" y="260" width="112" height="52" fill="var(--teal-600)" stroke="var(--teal-900)" stroke-width="1.5"/>
-<polygon points="515,260 531,256 531,312 515,312" fill="var(--teal-600)" stroke="var(--teal-900)" stroke-width="1.5"/>
-<polygon points="515,260 531,256 531,312 515,312" fill="var(--teal-900)" fill-opacity=".25"/>
-<rect x="414.2" y="278" width="14" height="16" rx="2" fill="var(--teal-900)"/><rect x="439.4" y="278" width="14" height="16" rx="2" fill="var(--teal-900)"/><rect x="464.6" y="278" width="14" height="16" rx="2" fill="var(--teal-900)"/><rect x="489.8" y="278" width="14" height="16" rx="2" fill="var(--teal-900)"/><rect x="519" y="276" width="8" height="16" rx="2" fill="var(--teal-900)"/>
-<rect x="403" y="208" width="112" height="52" fill="var(--teal-400)" stroke="var(--teal-900)" stroke-width="1.5"/>
-<polygon points="515,208 531,204 531,256 515,260" fill="var(--teal-400)" stroke="var(--teal-900)" stroke-width="1.5"/>
-<polygon points="515,208 531,204 531,256 515,260" fill="var(--teal-900)" fill-opacity=".25"/>
-<rect x="414.2" y="226" width="14" height="16" rx="2" fill="var(--teal-800)"/><rect x="439.4" y="226" width="14" height="16" rx="2" fill="var(--teal-800)"/><rect x="464.6" y="226" width="14" height="16" rx="2" fill="var(--teal-800)"/><rect x="489.8" y="226" width="14" height="16" rx="2" fill="var(--teal-800)"/><rect x="519" y="224" width="8" height="16" rx="2" fill="var(--teal-800)"/>
-<rect x="403" y="156" width="112" height="52" fill="var(--teal-400)" stroke="var(--teal-900)" stroke-width="1.5"/>
-<polygon points="515,156 531,152 531,204 515,208" fill="var(--teal-400)" stroke="var(--teal-900)" stroke-width="1.5"/>
-<polygon points="515,156 531,152 531,204 515,208" fill="var(--teal-900)" fill-opacity=".25"/>
-<rect x="414.2" y="174" width="14" height="16" rx="2" fill="var(--teal-800)"/><rect x="439.4" y="174" width="14" height="16" rx="2" fill="var(--teal-800)"/><rect x="464.6" y="174" width="14" height="16" rx="2" fill="var(--teal-800)"/><rect x="489.8" y="174" width="14" height="16" rx="2" fill="var(--teal-800)"/><rect x="519" y="172" width="8" height="16" rx="2" fill="var(--teal-800)"/>
-<path d="M403,104 V156 M435,104 V156 M467,104 V156 M499,104 V156 M531,104 V156 M403,104 H531 M403,130 H531 M403,156 H531 M403,104 L435,130 M435,130 L403,156 M467,104 L435,130 M435,130 L467,156 M467,104 L499,130 M499,130 L467,156 M531,104 L499,130 M499,130 L531,156 " fill="none" stroke="var(--teal-100)" stroke-opacity=".85" stroke-width="1.5"/>
-<rect x="457" y="112" width="4" height="44" fill="var(--teal-100)"/>
-<rect x="445" y="112" width="60" height="3" fill="var(--teal-100)"/>
-<rect x="445" y="115" width="8" height="9" fill="var(--teal-100)"/>
-<line x1="499" y1="115" x2="499" y2="134" stroke="var(--teal-100)" stroke-width="1.5"/>
-<rect x="486" y="134" width="26" height="6" fill="var(--teal-100)"/>
-</g>
-</g>
-<g data-step="2" data-effect="dia">
-<g class="piece" id="f04-broken-a">
-<rect x="29" y="208" width="112" height="52" fill="var(--red)" stroke="var(--teal-900)" stroke-width="1.5"/>
-<polygon points="141,208 157,204 157,256 141,260" fill="var(--red)" stroke="var(--teal-900)" stroke-width="1.5"/>
-<polygon points="141,208 157,204 157,256 141,260" fill="var(--teal-900)" fill-opacity=".25"/>
-<rect x="40.2" y="226" width="14" height="16" rx="2" fill="var(--teal-900)"/>
-<rect x="65.4" y="226" width="14" height="16" rx="2" fill="var(--teal-900)"/>
-<rect x="115.8" y="226" width="14" height="16" rx="2" fill="var(--teal-900)" transform="rotate(14 122.8 234)"/>
-<rect x="145" y="224" width="8" height="16" rx="2" fill="var(--teal-900)"/>
-<path d="M59,208 L67,222 L57,232 L69,244 L63,260" fill="none" stroke="var(--teal-900)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M95,208 L89,224 L101,236 L93,260" fill="none" stroke="var(--teal-900)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M127,232 L119,242 L129,252 L123,260" fill="none" stroke="var(--teal-900)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
-</g>
-<g class="piece" id="f04-broken-b">
-<rect x="216" y="208" width="112" height="52" fill="var(--red)" stroke="var(--teal-900)" stroke-width="1.5"/>
-<polygon points="328,208 344,204 344,256 328,260" fill="var(--red)" stroke="var(--teal-900)" stroke-width="1.5"/>
-<polygon points="328,208 344,204 344,256 328,260" fill="var(--teal-900)" fill-opacity=".25"/>
-<rect x="227.2" y="226" width="14" height="16" rx="2" fill="var(--teal-900)"/>
-<rect x="252.4" y="226" width="14" height="16" rx="2" fill="var(--teal-900)"/>
-<rect x="302.8" y="226" width="14" height="16" rx="2" fill="var(--teal-900)" transform="rotate(14 309.8 234)"/>
-<rect x="332" y="224" width="8" height="16" rx="2" fill="var(--teal-900)"/>
-<path d="M246,208 L254,222 L244,232 L256,244 L250,260" fill="none" stroke="var(--teal-900)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M282,208 L276,224 L288,236 L280,260" fill="none" stroke="var(--teal-900)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M314,232 L306,242 L316,252 L310,260" fill="none" stroke="var(--teal-900)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
-</g>
-<g class="piece" id="f04-broken-c">
-<rect x="403" y="208" width="112" height="52" fill="var(--red)" stroke="var(--teal-900)" stroke-width="1.5"/>
-<polygon points="515,208 531,204 531,256 515,260" fill="var(--red)" stroke="var(--teal-900)" stroke-width="1.5"/>
-<polygon points="515,208 531,204 531,256 515,260" fill="var(--teal-900)" fill-opacity=".25"/>
-<rect x="414.2" y="226" width="14" height="16" rx="2" fill="var(--teal-900)"/>
-<rect x="439.4" y="226" width="14" height="16" rx="2" fill="var(--teal-900)"/>
-<rect x="489.8" y="226" width="14" height="16" rx="2" fill="var(--teal-900)" transform="rotate(14 496.8 234)"/>
-<rect x="519" y="224" width="8" height="16" rx="2" fill="var(--teal-900)"/>
-<path d="M433,208 L441,222 L431,232 L443,244 L437,260" fill="none" stroke="var(--teal-900)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M469,208 L463,224 L475,236 L467,260" fill="none" stroke="var(--teal-900)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M501,232 L493,242 L503,252 L497,260" fill="none" stroke="var(--teal-900)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
-</g>
-</g></svg>
-    </div>
-    <div class="mk a" data-step="2" data-effect="pop"><div class="marker"><span class="logo"><img src="assets/yape-logo.png" alt="Yape"></span></div></div>
-    <div class="mk b" data-step="2" data-effect="pop" data-delay="120"><div class="marker"><span class="logo bcp"><img src="assets/bcp-logo.png" alt="BCP"></span></div></div>
-    <div class="mk c" data-step="2" data-effect="pop" data-delay="240"><div class="marker"><span class="logo"><img src="assets/credicorp-logo.png" alt="Credicorp"></span></div></div>
-    <div data-step="1" data-effect="stagger">
-      <div class="stage s0"><div class="no">0</div><div><h3>DevOps &amp; DORA</h3><p>Every team runs its own pipeline and its own infrastructure code</p></div></div>
-      <div class="stage s1"><div class="no">1</div><div><h3>GitOps &amp; releases</h3><p>Canary and blue-green releases; merged means deployed</p></div></div>
-      <div class="stage s2"><div class="no">2</div><div><h3>Platform Engineering</h3><p>A platform team offers golden paths and self-service</p></div></div>
-      <div class="stage s3"><div class="no">3</div><div><h3>InnerSource</h3><p>One shared platform: PRs, Trusted Committers, guardrails</p></div></div>
-      <div class="stage s4"><div class="no">4</div><div><h3>Agentic Platforms</h3><p>Agents consume and change the platform through tools</p></div></div>
-    </div>
-    <div class="hold" data-step="2" data-effect="rows" data-delay="360">
-      <p class="holding"><b>In a holding:</b> N companies × the same platform, rebuilt N times</p>
-      <div class="tags"><span class="tag">same outage</span><span class="tag">same audit finding</span><span class="tag">same re-platforming</span></div>
-    </div>
-    <div class="callout" data-step="3" data-effect="enter"><b>What if infrastructure could be a reusable framework too?</b> Not single components: a whole suite, extensible and customizable to each company.</div>
-  </div>
-  <aside class="notes">
-    <p><span class="t">1:30 · The pace. · Juan David</span></p>
-    <p>Every company wants to keep its pace. <em>(→ 1: the five levels, bottom to top)</em> DevOps gave each team its pipeline; GitOps gave it releases from git; Platform Engineering gave them golden paths. InnerSource is the storey nobody in the group has built yet, and now agents want to use those paths too. <em>(→ 2: the companies land on their cranes; the red storey; the shared incident labels)</em> From inside a holding you see the cost of that pace: each company builds its platform again, with slightly different versions, and hits the same outage and the same audit finding a few months apart. We already solved this for code with the registry. <em>(→ 3: the yellow question)</em> So: what if infrastructure could be an InnerSource project too? Not a module here and a component there, but the whole suite. That question is the rest of this talk: parts 2 and 3 are the artifacts, 4 is the governance, 5 is the agentic era.</p>
-    <p>For the speaker, not on screen: level 0 is measured with DORA; level 4 is a marketplace of agents, skills and MCP tools.</p>
-    <p class="warn">⚠ The five-level scale is this talk's own framing, not CMMI or any published model. The three brands are the ones from slide 03 (an illustration of the holding), and the height of each tower is illustrative, not a maturity assessment of Yape, BCP or Credicorp; with real logos the heights read as a ranking: confirm with Oscar / the brands before presenting it, or equalise the heights. The red storey and the incident labels (same outage · same audit finding · same re-platforming) are illustrative too. If a real, anonymised example from the group can be told in one sentence, use it here and mark it as real. Say "the model" / "the design", never "we run this".</p>
-  </aside>
-</section>
+<section class="slide content dark opening intro04" data-title="Different companies. Similar platform needs." data-time="0:40"><div class="speaker-badge" data-speaker="OSCAR"><span class="speaker-dot"></span><span>OSCAR</span><span class="speaker-scope">INTRODUCTION · 4 / 11</span></div><h2><span class="k">Oscar · The opportunity</span>Different companies. <em>Similar platform needs.</em></h2><div class="body"><svg class="dia opening-art" viewBox="0 0 1184 456" role="img" aria-label="Different companies. Similar platform needs."><g data-step="0" data-effect="fade"><text class="oi-eyebrow" x="592" y="34" text-anchor="middle">A HOLDING: DIFFERENT COMPANIES, SIMILAR FOUNDATIONS</text></g><g data-step="0" data-effect="fade"><g data-cue="assemble" ><use href="#oi-workspace" x="75" y="202" width="155" height="142"/></g><text class="oi-label" x="153" y="381" text-anchor="middle">Company A</text></g><g data-step="1" data-effect="flow"><path class="ln" d="M590 114Q590 170 153 197" marker-end="url(#ar-teal)"/></g><g data-step="2" data-effect="fade"><g data-cue="rise" ><use href="#oi-shield" x="55" y="145" width="47" height="62"/></g><g data-cue="assemble" ><use href="#oi-server" x="187" y="159" width="48" height="68"/></g></g><g data-step="0" data-effect="fade"><g data-cue="assemble" ><use href="#oi-workspace" x="372" y="202" width="155" height="142"/></g><text class="oi-label" x="450" y="381" text-anchor="middle">Company B</text></g><g data-step="1" data-effect="flow"><path class="ln" d="M590 114Q590 170 450 197" marker-end="url(#ar-teal)"/></g><g data-step="2" data-effect="fade"><g data-cue="rise" ><use href="#oi-shield" x="352" y="145" width="47" height="62"/></g><g data-cue="assemble" ><use href="#oi-server" x="484" y="159" width="48" height="68"/></g></g><g data-step="0" data-effect="fade"><g data-cue="assemble" ><use href="#oi-workspace" x="669" y="202" width="155" height="142"/></g><text class="oi-label" x="747" y="381" text-anchor="middle">Company C</text></g><g data-step="1" data-effect="flow"><path class="ln" d="M590 114Q590 170 747 197" marker-end="url(#ar-teal)"/></g><g data-step="2" data-effect="fade"><g data-cue="rise" ><use href="#oi-shield" x="649" y="145" width="47" height="62"/></g><g data-cue="assemble" ><use href="#oi-server" x="781" y="159" width="48" height="68"/></g></g><g data-step="0" data-effect="fade"><g data-cue="assemble" ><use href="#oi-workspace" x="966" y="202" width="155" height="142"/></g><text class="oi-label" x="1044" y="381" text-anchor="middle">Company D</text></g><g data-step="1" data-effect="flow"><path class="ln" d="M590 114Q590 170 1044 197" marker-end="url(#ar-teal)"/></g><g data-step="2" data-effect="fade"><g data-cue="rise" ><use href="#oi-shield" x="946" y="145" width="47" height="62"/></g><g data-cue="assemble" ><use href="#oi-server" x="1078" y="159" width="48" height="68"/></g></g><g data-step="1" data-effect="fade"><g data-cue="tilt" ><g data-loop="float" data-amplitude="2.5" data-period="5400"><use href="#oi-parcel" x="553" y="49" width="74" height="74"/></g></g><text class="oi-label" x="730" y="94" text-anchor="start">“We need a service.”</text></g><g data-step="2" data-effect="fade"><text class="oi-small" x="592" y="431" text-anchor="middle">Identity · delivery · security · operations</text></g></svg><p class="opening-line" data-step="2" data-effect="enter">Autonomy is necessary. Repeating every common decision is costly.</p></div><aside class="notes"><p class="t">0:40 · Oscar · Opening 4/11</p><p>Our context is a group of companies. Each has its own priorities, teams and operating environment. [Step 1] Yet a familiar request arrives in each place: we need to build and operate a service. [Step 2] Behind that request sit many of the same needs: identity, networking, delivery, security and observability. Local context matters, so autonomy is necessary. But autonomy can also leave teams solving common foundational problems separately. These companies are illustrative; this is not a ranking or a measured comparison. The question is where independent decisions add value, and where a shared starting point could help.</p></aside></section>
+
+<section class="slide content dark opening intro05" data-title="Shared pieces. Repeated assembly." data-time="0:50"><div class="speaker-badge" data-speaker="OSCAR"><span class="speaker-dot"></span><span>OSCAR</span><span class="speaker-scope">INTRODUCTION · 5 / 11</span></div>
+<h2><span class="k">Oscar · The opportunity</span>Shared pieces. <em>Repeated assembly.</em></h2>
+<div class="body"><svg class="dia opening-art" viewBox="0 0 1184 456" role="img" aria-label="Shared pieces. Repeated assembly."><g data-step="0" data-effect="fade" ><text class="oi-eyebrow" x="32" y="30" text-anchor="start">REUSABLE PIECES</text><use href="#oi-code" x="35" y="50" width="125" height="100"/><use href="#oi-books" x="180" y="50" width="115" height="100"/><use href="#oi-doc" x="320" y="50" width="85" height="100"/><text class="oi-hero" x="660" y="70" text-anchor="middle">The integration work still repeats.</text></g><g data-step="1" data-effect="flow" ><path class="ln y " d="M230 155C230 190 240 173 240 210" marker-end="url(#ar-yellow)"/></g><g data-step="1" data-effect="fade" ><g data-cue="assemble" ><g transform="translate(90 210) scale(0.82)"><path d="M0 80L150 0L300 80L150 160Z" fill="url(#oi-deck-top)" stroke="#74A5A2" stroke-width="2"/><path d="M0 80V106L150 186V160Z" fill="#317775"/><path d="M150 160L300 80V106L150 186Z" fill="#216160"/><use href="#oi-server" x="55" y="13" width="85" height="105"/><use href="#oi-shield" x="150" y="62" width="70" height="85"/><path d="M35 98L150 159L265 98" fill="none" stroke="#BAD8D5" stroke-width="2"/></g></g><text class="oi-label" x="215" y="408" text-anchor="middle">Company A</text></g><g data-step="1" data-effect="fade" ><g data-cue="travel" data-from="90,-170" data-duration="1200"><use href="#oi-parcel" x="310" y="253" width="55" height="55"/></g></g><g data-step="2" data-effect="flow" ><path class="ln y " d="M230 155C230 190 615 173 615 210" marker-end="url(#ar-yellow)"/></g><g data-step="2" data-effect="fade" ><g data-cue="assemble" ><g transform="translate(465 210) scale(0.82)"><path d="M0 80L150 0L300 80L150 160Z" fill="url(#oi-deck-top)" stroke="#74A5A2" stroke-width="2"/><path d="M0 80V106L150 186V160Z" fill="#317775"/><path d="M150 160L300 80V106L150 186Z" fill="#216160"/><use href="#oi-server" x="55" y="13" width="85" height="105"/><use href="#oi-shield" x="150" y="62" width="70" height="85"/><path d="M35 98L150 159L265 98" fill="none" stroke="#BAD8D5" stroke-width="2"/><path d="M180 -6L220 15L180 38L140 17Z" fill="#FFC561" stroke="#094949" stroke-width="2"/></g></g><text class="oi-label" x="590" y="408" text-anchor="middle">Company B</text></g><g data-step="2" data-effect="fade" ><g data-cue="travel" data-from="-285,-170" data-duration="1200"><use href="#oi-parcel" x="685" y="253" width="55" height="55"/></g></g><g data-step="3" data-effect="flow" ><path class="ln y " d="M230 155C230 190 990 173 990 210" marker-end="url(#ar-yellow)"/></g><g data-step="3" data-effect="fade" ><g data-cue="assemble" ><g transform="translate(840 210) scale(0.82)"><path d="M0 80L150 0L300 80L150 160Z" fill="url(#oi-deck-top)" stroke="#74A5A2" stroke-width="2"/><path d="M0 80V106L150 186V160Z" fill="#317775"/><path d="M150 160L300 80V106L150 186Z" fill="#216160"/><use href="#oi-server" x="55" y="13" width="85" height="105"/><use href="#oi-shield" x="150" y="62" width="70" height="85"/><path d="M35 98L150 159L265 98" fill="none" stroke="#BAD8D5" stroke-width="2"/></g></g><text class="oi-label" x="965" y="408" text-anchor="middle">Company C</text></g><g data-step="3" data-effect="fade" ><g data-cue="travel" data-from="-660,-170" data-duration="1200"><use href="#oi-parcel" x="1060" y="253" width="55" height="55"/></g></g><g data-step="3" data-effect="fade"><text class="oi-eyebrow" x="595" y="109" text-anchor="middle">Different versions. Separate integration work.</text></g></svg><p class="opening-line" data-step="3" data-effect="enter">What if the reusable artifact were the whole foundation?</p></div>
+<aside class="notes"><p class="t">0:50 · Oscar · Opening 5/11</p><p>Even when teams share excellent components, they can still repeat the composition work. [Step 1] One company connects the pieces, configures their interfaces and decides how to operate the whole. [Step 2] Another assembles a similar platform in a different way. [Step 3] A third repeats the process. Versions, integrations and controls can diverge over time. That means an improvement may need to be rediscovered or reimplemented in several places. We are describing a risk to design against, not claiming these specific incidents occurred. The gap is between sharing the parts and sharing how the parts work together. That composition is itself work, and it can become a reusable artifact.</p></aside></section>
+
+<section class="slide content light opening intro06" data-title="Keep the collaboration. Increase the scale." data-time="0:30"><div class="speaker-badge" data-speaker="OSCAR"><span class="speaker-dot"></span><span>OSCAR</span><span class="speaker-scope">INTRODUCTION · 6 / 11</span></div><h2><span class="k">Oscar · The opportunity</span>Keep the collaboration. <em>Increase the scale.</em></h2><div class="body"><svg class="dia opening-art" viewBox="0 0 1184 456" role="img" aria-label="Keep the collaboration. Increase the scale."><g data-step="0" data-effect="fade"><text class="oi-eyebrow" x="110" y="46" text-anchor="start">THE UNIT OF REUSE</text><text class="oi-label" x="330" y="410" text-anchor="middle">Individual pieces</text></g><g data-step="1" data-effect="fade"><g data-cue="assemble" ><g transform="translate(615 155) scale(1.3)"><path d="M0 80L150 0L300 80L150 160Z" fill="url(#oi-deck-top)" stroke="#74A5A2" stroke-width="2"/><path d="M0 80V106L150 186V160Z" fill="#317775"/><path d="M150 160L300 80V106L150 186Z" fill="#216160"/></g></g></g><g data-poses='{"0":{"transform":"translate(0,0)","opacity":"1"},"1":{"transform":"translate(570px,-5px)","opacity":"1"},"2":{"transform":"translate(570px,-5px)","opacity":"1"}}'><use href="#oi-code" x="90" y="130" width="150" height="135"/></g><g data-poses='{"0":{"transform":"translate(0,0)","opacity":"1"},"1":{"transform":"translate(500px,30px)","opacity":"1"},"2":{"transform":"translate(500px,30px)","opacity":"1"}}'><g data-loop="float" data-amplitude="2.5" data-period="5400"><use href="#oi-books" x="290" y="150" width="135" height="125"/></g></g><g data-poses='{"0":{"transform":"translate(0,0)","opacity":"1"},"1":{"transform":"translate(420px,90px)","opacity":"1"},"2":{"transform":"translate(420px,90px)","opacity":"1"}}'><use href="#oi-shield" x="480" y="140" width="90" height="120"/></g><g data-step="1" data-effect="fade" data-delay="1100"><text class="oi-hero" x="250" y="178" text-anchor="start">What if we shared</text><text class="oi-hero" x="250" y="220" text-anchor="start">the whole foundation?</text></g><g data-step="2" data-effect="fade"><text class="oi-label" x="810" y="427" text-anchor="middle">Composition + contribution model</text></g></svg><p class="opening-line" data-step="2" data-effect="enter">A bigger artifact. The same publish → consume → contribute loop.</p></div><aside class="notes"><p class="t">0:30 · Oscar · Opening 6/11</p><p>This is the next level. [Step 1] What if the reusable artifact included how these components fit together? We would share a starting foundation instead of rebuilding it from the pieces. [Step 2] The collaboration model stays familiar: publish a version, adopt it and contribute improvements back. The artifact gets larger; the InnerSource relationship between consumers and maintainers stays the same.</p></aside></section>
+
+<section class="slide content light opening intro07" data-title="An InnerSource landing zone. One shared foundation." data-time="0:50"><div class="speaker-badge" data-speaker="OSCAR"><span class="speaker-dot"></span><span>OSCAR</span><span class="speaker-scope">INTRODUCTION · 7 / 11</span></div>
+<h2><span class="k">Oscar · Proposed model</span>An InnerSource landing zone. <em>One shared foundation.</em></h2>
+<div class="body"><svg class="dia opening-art" viewBox="0 0 1184 456" role="img" aria-label="An InnerSource landing zone. One shared foundation."><g transform="translate(0 43) scale(1 .88)"><g data-step="0" data-effect="fade" ></g><g data-step="0" data-effect="fade" ><g data-cue="assemble" ><g data-loop="float" data-amplitude="2" data-period="6200"><g transform="translate(385 210)"><path d="M0 0L205 -100L410 0L205 100Z" fill="#FFC561" stroke="#D9A34C" stroke-width="2"/><path d="M0 0V22L205 122V100Z" fill="#D7A043"/><path d="M205 100L410 0V22L205 122Z" fill="#B78331"/></g></g></g><text class="oi-label" x="32" y="274" text-anchor="start">01  Foundation</text><text class="oi-small" x="32" y="304" text-anchor="start">Identity · network · infrastructure</text></g><g data-step="1" data-effect="fade" ><g data-cue="assemble" data-duration="1100"><g data-loop="float" data-amplitude="3" data-period="5700"><g transform="translate(385 133)"><path d="M0 0L205 -100L410 0L205 100Z" fill="url(#oi-deck-top)" stroke="#74A5A2" stroke-width="2"/><path d="M0 0V16L205 116V100Z" fill="#74A5A2"/><path d="M205 100L410 0V16L205 116Z" fill="#317775"/></g></g></g><text class="oi-label" x="32" y="160" text-anchor="start">02  Operations</text><text class="oi-small" x="32" y="190" text-anchor="start">Delivery · observability · controls</text></g><g data-step="1" data-effect="fade" ><g data-cue="assemble" data-delay="180" data-duration="1100"><g data-loop="float" data-amplitude="3" data-period="6500"><g transform="translate(385 57)"><path d="M0 0L205 -100L410 0L205 100Z" fill="#216160" stroke="#74A5A2" stroke-width="2"/><path d="M0 0V16L205 116V100Z" fill="#094949"/><path d="M205 100L410 0V16L205 116Z" fill="#0B3B3A"/><use href="#oi-server" x="115" y="-113" width="75" height="96"/><use href="#oi-shield" x="215" y="-55" width="65" height="82"/></g></g></g><text class="oi-label" x="32" y="48" text-anchor="start">03  Ways to build</text><text class="oi-small" x="32" y="78" text-anchor="start">Service paths · provisioning</text></g><g data-step="2" data-effect="flow" ><path class="ln  " d="M800 208Q860 208 887 70" marker-end="url(#ar-teal)"/></g><g data-step="2" data-effect="fade" ><g data-cue="rise" ><use href="#oi-workspace" x="897" y="28" width="90" height="85"/></g><text class="oi-label" x="1005" y="59" text-anchor="start">Company A</text><text class="oi-small" x="1005" y="90" text-anchor="start">Adopts v1.4</text></g><g data-step="2" data-effect="flow" ><path class="ln  " d="M800 208Q860 208 930 217" marker-end="url(#ar-teal)"/></g><g data-step="2" data-effect="fade" ><g data-cue="rise" ><use href="#oi-workspace" x="940" y="175" width="90" height="85"/></g><text class="oi-label" x="1048" y="206" text-anchor="start">Company B</text><text class="oi-small" x="1048" y="237" text-anchor="start">Keeps v1.3</text></g><g data-step="2" data-effect="flow" ><path class="ln  " d="M800 208Q860 208 877 364" marker-end="url(#ar-teal)"/></g><g data-step="2" data-effect="fade" ><g data-cue="rise" ><use href="#oi-workspace" x="887" y="322" width="90" height="85"/></g><text class="oi-label" x="995" y="353" text-anchor="start">Company C</text><text class="oi-small" x="995" y="384" text-anchor="start">Tests v1.5</text></g><g data-step="3" data-effect="flow" ><path class="ln ok d" d="M1158 388Q1200 435 832 435Q737 435 742 326" marker-end="url(#ar-ok)"/><path class="oi-circulation green" data-loop="route" data-period="5000" d="M1158 388Q1200 435 832 435Q737 435 742 326" aria-hidden="true"/><text class="oi-small" x="960" y="410" text-anchor="middle">Contribute back</text></g></g></svg><p class="opening-line" data-step="3" data-effect="enter">Versioned together. Adopted at each company’s own pace.</p></div>
+<aside class="notes"><p class="t">0:50 · Oscar · Opening 7/11</p><p>We call this proposed starting point an InnerSource landing zone. The term is our framing for this talk, not an official InnerSource pattern. Start with a common foundation: identity, network and infrastructure. [Step 1] Add operational capabilities such as delivery, observability and security controls, then the paths teams use to build or request services. We are sharing how those capabilities fit together, with versions, documentation and maintainers. [Step 2] Each company can run its own instance and adopt a chosen version. [Step 3] Improvements that help other adopters return through reviewed pull requests. The proposal is a shared foundation that remains extensible. It gives common decisions a place to evolve together without removing each company's specific operating context.</p></aside></section>
+
+<section class="slide content light opening intro08" data-title="Shared foundation does not mean identical companies." data-time="0:55"><div class="speaker-badge" data-speaker="OSCAR"><span class="speaker-dot"></span><span>OSCAR</span><span class="speaker-scope">INTRODUCTION · 8 / 11</span></div><h2><span class="k">Oscar · The opportunity</span>Shared foundation does not mean <em>identical companies.</em></h2><div class="body"><svg class="dia opening-art" viewBox="0 0 1184 456" role="img" aria-label="Shared foundation does not mean identical companies."><g data-step="0" data-effect="fade"><text class="oi-eyebrow" x="27" y="29" text-anchor="start">SHARED BASE: v1.4</text><g transform="translate(46 136) scale(1.22)"><path d="M0 80L150 0L300 80L150 160Z" fill="url(#oi-deck-top)" stroke="#74A5A2" stroke-width="2"/><path d="M0 80V106L150 186V160Z" fill="#317775"/><path d="M150 160L300 80V106L150 186Z" fill="#216160"/></g><use href="#oi-server" x="133" y="92" width="90" height="128"/><use href="#oi-shield" x="260" y="171" width="70" height="90"/><text class="oi-label" x="226" y="413" text-anchor="middle">Common capabilities</text></g><g data-step="1" data-effect="flow"><path class="ln" d="M445 258H535" marker-end="url(#ar-teal)"/><path class="ln" d="M445 258Q510 258 550 113" marker-end="url(#ar-teal)"/></g><g data-step="1" data-effect="fade"><g transform="translate(575 164) scale(0.9)"><path d="M0 80L150 0L300 80L150 160Z" fill="url(#oi-deck-top)" stroke="#74A5A2" stroke-width="2"/><path d="M0 80V106L150 186V160Z" fill="#317775"/><path d="M150 160L300 80V106L150 186Z" fill="#216160"/></g><g transform="translate(896 164) scale(0.9)"><path d="M0 80L150 0L300 80L150 160Z" fill="url(#oi-deck-top)" stroke="#74A5A2" stroke-width="2"/><path d="M0 80V106L150 186V160Z" fill="#317775"/><path d="M150 160L300 80V106L150 186Z" fill="#216160"/></g><text class="oi-label" x="705" y="380" text-anchor="middle">Company A</text><text class="oi-label" x="1025" y="380" text-anchor="middle">Company B</text></g><g data-poses='{"0":{"transform":"translate(0,-60px)","opacity":"0"},"1":{"transform":"translate(0,-60px)","opacity":"0"},"2":{"transform":"translate(0,-60px)","opacity":"1"},"3":{"transform":"translate(0,-60px)","opacity":"1"}}'><use href="#oi-parcel" x="673" y="183" width="66" height="66"/><text class="oi-small" x="706" y="284" text-anchor="middle">Domain A</text></g><g data-poses='{"0":{"transform":"translate(0,-60px)","opacity":"0"},"1":{"transform":"translate(0,-60px)","opacity":"0"},"2":{"transform":"translate(0,-60px)","opacity":"1"},"3":{"transform":"translate(30px,-60px)","opacity":"1"}}'><use href="#oi-parcel" x="990" y="183" width="66" height="66"/><text class="oi-small" x="1023" y="284" text-anchor="middle">Domain B</text></g><g data-step="1" data-effect="fade"><text class="oi-small" x="705" y="412" text-anchor="middle">Pins v1.4</text><text class="oi-small" x="1025" y="412" text-anchor="middle">Pins v1.4</text></g><g data-step="2" data-effect="fade"><text class="oi-eyebrow" x="591" y="50" text-anchor="start">LOCAL CONFIGURATION + EXTENSIONS</text><text class="oi-label" x="593" y="84" text-anchor="start">Adapt the context. Keep the base.</text></g><g data-step="3" data-effect="fade"><text class="oi-small" x="1045" y="115" text-anchor="middle">Change locally</text></g></svg><p class="opening-line" data-step="3" data-effect="enter">Common base, local choices and deliberate upgrades.</p></div><aside class="notes"><p class="t">0:55 · Oscar · Opening 8/11</p><p>A shared foundation does not require one environment or identical configurations. [Step 1] These companies consume the same version of the common base. The numbers are examples. [Step 2] Each adds its own configuration and extensions: domains, infrastructure identifiers, local services and other contextual needs. [Step 3] A local change does not have to become a change to the common base. Conversely, a useful common improvement can return upstream. Each company decides when to adopt a new platform version. The design challenge is making that boundary explicit, so customization does not turn into disconnected copies. We want autonomy at the edges and shared learning in the foundation.</p></aside></section>
+
+<section class="slide content dark opening intro09" data-title="Reuse the learning. Share the responsibility." data-time="0:50"><div class="speaker-badge" data-speaker="OSCAR"><span class="speaker-dot"></span><span>OSCAR</span><span class="speaker-scope">INTRODUCTION · 9 / 11</span></div>
+<h2><span class="k">Oscar · The opportunity</span>Reuse the learning. <em>Share the responsibility.</em></h2>
+<div class="body"><svg class="dia opening-art" viewBox="0 0 1184 456" role="img" aria-label="Reuse the learning. Share the responsibility."><g data-step="0" data-effect="fade" ><g data-cue="assemble" ><use href="#oi-project" x="300" y="122" width="180" height="180"/></g><text class="oi-label" x="390" y="331" text-anchor="middle">Shared foundation</text></g><g data-step="1" data-effect="flow" ><path class="ln y " d="M373 92C206 36 90 129 126 243" marker-end="url(#ar-yellow)"/><path class="ln y " d="M171 300C245 401 474 418 576 286" marker-end="url(#ar-yellow)"/><path class="ln y " d="M605 217C664 98 534 29 439 64" marker-end="url(#ar-yellow)"/></g><g data-step="1" data-effect="fade" ><g data-cue="tilt" ><use href="#oi-route" x="65" y="131" width="66" height="66"/></g><text class="oi-label" x="143" y="171" text-anchor="start">Reuse decisions</text></g><g data-step="1" data-effect="fade" ><g data-cue="tilt" ><use href="#oi-people" x="435" y="330" width="66" height="66"/></g><text class="oi-label" x="513" y="370" text-anchor="start">Increase mobility</text></g><g data-step="1" data-effect="fade" ><g data-cue="tilt" ><use href="#oi-spark" x="533" y="69" width="66" height="66"/></g><text class="oi-label" x="611" y="109" text-anchor="start">Spread learning</text></g><g data-step="2" data-effect="fade" ><path d="M786 35V415" stroke="var(--line)" stroke-width="2"/><text class="oi-eyebrow" x="830" y="44" text-anchor="start">THE WORKING AGREEMENT</text><g data-cue="assemble" ><use href="#oi-shield" x="835" y="75" width="82" height="98"/></g><text class="oi-label" x="938" y="105" text-anchor="start">Common or local?</text><text class="oi-small" x="938" y="135" text-anchor="start">Clear extension boundaries</text><g data-cue="rise" ><use href="#oi-people" x="835" y="199" width="82" height="76"/></g><text class="oi-label" x="938" y="221" text-anchor="start">Who maintains it?</text><text class="oi-small" x="938" y="251" text-anchor="start">Owners across companies</text><g data-cue="tilt" ><use href="#oi-release" x="835" y="315" width="82" height="76"/></g><text class="oi-label" x="938" y="337" text-anchor="start">How do we upgrade?</text><text class="oi-small" x="938" y="367" text-anchor="start">Versions + tested changes</text></g></svg><p class="opening-line" data-step="2" data-effect="enter">Potential benefits need a contribution model that works.</p></div>
+<aside class="notes"><p class="t">0:50 · Oscar · Opening 9/11</p><p>The expected benefits are broader than code reuse. [Step 1] Reuse decisions, so every team does not redesign the same integrations. Spread learning, so a reviewed improvement can become available to other adopters. Create more familiar ground for people moving and collaborating across teams. These are potential benefits, not measured savings. [Step 2] They depend on a working agreement. What belongs in the base and what stays local? Who maintains it, and how do consuming companies become contributors? How do we publish and adopt upgrades safely? A repository alone cannot resolve those questions. The model needs ownership, extension boundaries and evidence for change. That is where collaboration becomes a governance problem, and where GitOps gives us a bridge to operations.</p></aside></section>
+
+<section class="slide content dark opening intro10 context-slide" data-title="Context engineering: shared foundation, living context." data-time="0:45"><div class="speaker-badge" data-speaker="OSCAR"><span class="speaker-dot"></span><span>OSCAR</span><span class="speaker-scope">INTRODUCTION · 10 / 11</span></div><h2><span class="k">Oscar · Context engineering · proposed extension</span>Shared foundation. <em>Living context.</em></h2><div class="body"><svg class="dia opening-art" viewBox="0 0 1184 456" role="img" aria-label="A shared knowledge foundation supplies a focused context for an agent. Task and identity scope the selection; fresh tool observations replace stale state."><defs><radialGradient id="ctx-core-glow"><stop stop-color="#0AA8A7" stop-opacity=".27"/><stop offset="1" stop-color="#0AA8A7" stop-opacity="0"/></radialGradient><linearGradient id="ctx-glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#317775"/><stop offset="1" stop-color="#0B3B3A"/></linearGradient><linearGradient id="ctx-front" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#EDF6F5"/><stop offset="1" stop-color="#BAD8D5"/></linearGradient></defs><g data-step="0" data-effect="fade"><g data-cue="assemble"><path d="M35 250L180 174L325 250L180 328Z" fill="#317775" stroke="#74A5A2" stroke-width="2"/><path d="M35 250V272L180 350V328Z" fill="#216160"/><path d="M180 328L325 250V272L180 350Z" fill="#0B3B3A"/><use href="#oi-books" x="76" y="131" width="154" height="136"/><use href="#oi-shield" x="222" y="203" width="68" height="90"/></g><text x="180" y="405" class="ctx-label" text-anchor="middle">Shared foundation</text><text x="180" y="435" class="ctx-small" text-anchor="middle">Docs · templates · policies</text></g><g data-step="1" data-effect="flow"><path class="ln y" d="M331 248C391 248 399 182 456 182" marker-end="url(#ar-yellow)"/></g><g data-step="1" data-effect="fade"><g data-cue="assemble"><circle cx="650" cy="212" r="211" fill="url(#ctx-core-glow)"/><ellipse cx="650" cy="386" rx="180" ry="19" fill="#001D1A" opacity=".3"/><path d="M485 89L506 70H823L846 91V325L823 348H506L485 326Z" fill="#0B3B3A" stroke="#317775" stroke-width="2"/><rect x="471" y="78" width="352" height="260" rx="24" fill="url(#ctx-glass)" stroke="#97BDBB" stroke-width="2"/><path d="M491 81H801" stroke="#EDF6F5" stroke-opacity=".55" stroke-width="2"/><path d="M495 125H798" stroke="#74A5A2" stroke-opacity=".6"/><text x="495" y="108" class="ctx-eyebrow" text-anchor="start">CONTEXT · THIS STEP</text><circle cx="786" cy="104" r="5" fill="#FFC561"/><text x="495" y="169" class="ctx-value" text-anchor="start">Company A / staging</text><text x="495" y="201" class="ctx-value" text-anchor="start">Service template v1.4</text><path d="M495 225H798" stroke="#74A5A2" stroke-opacity=".6"/></g><text x="647" y="29" class="ctx-label" text-anchor="middle">Selected for the task</text></g><g data-step="1" data-effect="fade"><g data-cue="travel" data-from="-325,60" data-duration="1250"><use href="#oi-doc" x="767" y="145" width="33" height="42"/></g></g><g data-step="1" data-effect="fade"><g data-cue="rise"><g transform="translate(441 0) scale(.58)"><ellipse cx="1050" cy="307" rx="79" ry="15" fill="#001D1A" opacity=".28"/><path d="M1002 204L1050 180L1098 204V266L1050 291L1002 266Z" fill="#216160" stroke="#74A5A2" stroke-width="2"/><path d="M996 142Q996 122 1016 122H1084Q1104 122 1104 142V201Q1104 222 1084 222H1016Q996 222 996 201Z" fill="url(#ctx-front)" stroke="#EDF6F5" stroke-width="2"/><rect x="1009" y="143" width="82" height="58" rx="16" fill="#094949"/><path d="M1050 121V101" stroke="#97BDBB" stroke-width="4"/><circle cx="1050" cy="94" r="7" fill="#FFC561"/><rect x="1023" y="163" width="10" height="13" rx="5" fill="#FFC561"/><rect x="1067" y="163" width="10" height="13" rx="5" fill="#FFC561"/><path d="M1040 187Q1050 192 1060 187" fill="none" stroke="#BAD8D5" stroke-width="3" stroke-linecap="round"/><path d="M1028 244L1050 256L1072 244" fill="none" stroke="#FFC561" stroke-width="4" stroke-linecap="round"/></g></g><text x="1050" y="205" class="ctx-label" text-anchor="middle">Agent</text></g><g data-step="2" data-effect="flow"><path class="ln y" d="M855 177C920 177 928 115 1001 115" marker-end="url(#ar-yellow)"/></g><g data-step="2" data-effect="fade"><g data-cue="travel" data-from="-110,0" data-duration="1100"><use href="#oi-commit" x="943" y="108" width="33" height="33"/></g></g><g data-step="2" data-effect="flow"><path class="ln y" d="M648 410V354" marker-end="url(#ar-yellow)"/><text x="650" y="445" class="ctx-small" text-anchor="middle">Live observations via authorized tools</text></g><g data-step="2" data-effect="fade"><g data-cue="travel" data-from="0,55" data-duration="1100"><use href="#oi-commit" x="633" y="373" width="30" height="30"/></g></g><g data-switch="context" data-poses='{"0":{"transform":"translate(0,0)","opacity":"0"},"1":{"transform":"translate(0,0)","opacity":"0"},"2":{"transform":"translate(0,0)","opacity":"1"},"3":{"transform":"translate(0,0)","opacity":"0"}}'><text x="495" y="273" class="ctx-status ctx-status-old" text-anchor="start">Deployment: progressing</text><text x="495" y="310" class="ctx-small" text-anchor="start">Observed at t₀</text></g><g data-switch="context" data-poses='{"0":{"transform":"translate(0,0)","opacity":"0"},"1":{"transform":"translate(0,0)","opacity":"0"},"2":{"transform":"translate(0,0)","opacity":"0"},"3":{"transform":"translate(0,0)","opacity":"1"}}'><text x="495" y="273" class="ctx-status ctx-status-new" text-anchor="start">Deployment: healthy</text><text x="495" y="310" class="ctx-small" text-anchor="start">Observed at t₁ · refreshed</text></g><g data-step="3" data-effect="fade"><path class="oi-circulation gold ctx-refresh" data-loop="route" data-period="6200" d="M467 106C413 148 415 291 467 327M842 98C890 144 891 282 849 321" aria-hidden="true"/></g><g data-step="1" data-effect="fade"><g data-loop="packet" data-dx="110" data-dy="-60" data-period="5800"><use href="#oi-doc" x="330" y="227" width="25" height="25"/></g></g><g data-step="2" data-effect="fade"><g data-loop="packet" data-dx="0" data-dy="-69" data-period="4800"><use href="#oi-commit" x="633" y="409" width="25" height="25"/></g></g><g data-step="2" data-effect="fade"><g data-loop="packet" data-dx="130" data-dy="-60" data-period="6100"><use href="#oi-commit" x="851" y="160" width="25" height="25"/></g></g><g data-step="2" data-effect="fade"><circle cx="1050" cy="55" r="7" class="ctx-signal" data-loop="pulse" data-period="4200" aria-hidden="true"/></g><g data-step="1" data-effect="fade"><path d="M920 276H1169" class="ctx-rule"/><use href="#oi-doc" x="911" y="225" width="37" height="42"/><text x="959" y="244" class="ctx-effect-title">Approved template</text><text x="959" y="267" class="ctx-effect-small">Reuse a versioned path</text></g><g data-step="2" data-effect="fade"><path d="M920 349H1169" class="ctx-rule"/><use href="#oi-shield" x="913" y="295" width="34" height="43"/><text x="959" y="315" class="ctx-effect-title">Scoped tools</text><text x="959" y="338" class="ctx-effect-small">Enforced by tool services</text></g><g data-switch="context" data-poses='{"0":{"transform":"translate(0,0)","opacity":"0"},"1":{"transform":"translate(0,0)","opacity":"0"},"2":{"transform":"translate(0,0)","opacity":"1"},"3":{"transform":"translate(0,0)","opacity":"0"}}'><use href="#oi-route" x="914" y="365" width="34" height="40"/><text x="959" y="387" class="ctx-effect-title">Wait for rollout</text><text x="959" y="410" class="ctx-effect-small">Next suggested action</text></g><g data-switch="context" data-poses='{"0":{"transform":"translate(0,0)","opacity":"0"},"1":{"transform":"translate(0,0)","opacity":"0"},"2":{"transform":"translate(0,0)","opacity":"0"},"3":{"transform":"translate(0,0)","opacity":"1"}}'><use href="#oi-spark" x="914" y="365" width="34" height="40"/><text x="959" y="387" class="ctx-effect-title">Verify health</text><text x="959" y="410" class="ctx-effect-small">Updated suggested action</text></g><g data-step="3" data-effect="fade"><text x="918" y="444" class="ctx-effect-note">Illustrative agent behavior</text></g></svg><p class="opening-line" data-step="3" data-effect="enter">Shared knowledge + fresh evidence → a better-informed next action.</p></div><aside class="notes"><p class="t">0:45 · Oscar · Opening 10/11</p><p>Here are three behaviors we want to enable, illustrated rather than guaranteed. [Step 1] Reuse an approved template selected for Company A and staging. [Step 2] Authorized tools supply current observations and enforce access. While deployment is progressing, the next suggested action is to wait. [Step 3] A newer healthy observation changes that suggestion to verifying health. Packets show shared knowledge, fresh evidence and selected context moving through the system. This is a proposed extension, not something GitOps delivers automatically. Context engineering selects relevant information; outputs still need validation.</p><p class="context-sources">Design basis: <a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" target="_blank" rel="noopener">Anthropic · Effective context engineering</a>; <a href="https://www.langchain.com/blog/context-engineering-for-agents" target="_blank" rel="noopener">LangChain · Context engineering</a>. This platform mapping is a proposed design extension.</p></aside></section>
+
+<section class="slide content light opening intro11" data-title="From a reviewed change to a running platform." data-time="1:00"><div class="speaker-badge" data-speaker="OSCAR"><span class="speaker-dot"></span><span>OSCAR</span><span class="speaker-scope">INTRODUCTION · 11 / 11</span></div>
+<h2><span class="k">Oscar · The opportunity</span>From a reviewed change to a <em>running platform.</em></h2>
+<div class="body"><svg class="dia opening-art" viewBox="0 0 1184 456" role="img" aria-label="From a reviewed change to a running platform."><g data-step="0" data-effect="fade" ><g data-cue="tilt" ><use href="#oi-repo" x="38" y="99" width="260" height="235"/></g><text class="oi-label" x="168" y="368" text-anchor="middle">Propose + review</text><text class="oi-small" x="168" y="399" text-anchor="middle">Desired state in Git</text></g><g data-step="1" data-effect="flow" ><path class="ln  " d="M310 190H450" marker-end="url(#ar-teal)"/></g><g data-step="1" data-effect="fade" ><g data-cue="spin" ><use href="#oi-controller-shell" x="463" y="106" width="210" height="210"/><g data-loop="rotate" data-period="18000"><use href="#oi-controller-rotor" x="463" y="106" width="210" height="210"/></g></g><text class="oi-label" x="568" y="369" text-anchor="middle">Pull + reconcile</text><text class="oi-small" x="568" y="400" text-anchor="middle">A GitOps controller</text></g><g data-step="2" data-effect="flow" ><path class="ln  " d="M685 190H813" marker-end="url(#ar-teal)"/></g><g data-step="2" data-effect="fade" ><g data-cue="assemble" ><g transform="translate(849 124) scale(0.9)"><path d="M0 80L150 0L300 80L150 160Z" fill="url(#oi-deck-top)" stroke="#74A5A2" stroke-width="2"/><path d="M0 80V106L150 186V160Z" fill="#317775"/><path d="M150 160L300 80V106L150 186Z" fill="#216160"/><use href="#oi-server" x="55" y="13" width="85" height="105"/><use href="#oi-shield" x="150" y="62" width="70" height="85"/><path d="M35 98L150 159L265 98" fill="none" stroke="#BAD8D5" stroke-width="2"/><path d="M180 -6L220 15L180 38L140 17Z" fill="#FFC561" stroke="#094949" stroke-width="2"/></g></g><text class="oi-label" x="988" y="368" text-anchor="middle">Running platform</text></g><g data-step="2" data-effect="flow" ><path class="ln ok d" d="M1002 105C1002 40 578 40 570 92" marker-end="url(#ar-ok)"/><path class="oi-circulation green" data-loop="route" data-period="5000" d="M1002 105C1002 40 578 40 570 92" aria-hidden="true"/><text class="oi-small" x="793" y="28" text-anchor="middle">Compare · reconcile · repeat</text></g><g data-step="1" data-effect="fade" ><g data-cue="travel" data-from="-170,0" data-duration="1050"><use href="#oi-commit" x="397" y="169" width="42" height="42"/></g></g><g data-step="2" data-effect="fade" ><g data-cue="travel" data-from="-190,0" data-duration="1050"><use href="#oi-commit" x="780" y="169" width="42" height="42"/></g></g><g data-step="2" data-effect="fade"><path d="M820 427H1130" stroke="var(--line)" stroke-width="4"/><text class="oi-small" x="828" y="456" text-anchor="middle">v1</text><text class="oi-small" x="1120" y="456" text-anchor="middle">v2</text><text class="oi-small" x="970" y="404" text-anchor="middle">Actual state → desired state</text></g><g data-poses='{"0":{"transform":"translate(0,0)","opacity":"0"},"1":{"transform":"translate(0,0)","opacity":"0"},"2":{"transform":"translate(0,0)","opacity":"1"},"3":{"transform":"translate(300px,0)","opacity":"1"},"4":{"transform":"translate(300px,0)","opacity":"1"}}'><use href="#oi-commit" x="807" y="412" width="28" height="28"/></g><g data-step="2" data-effect="fade"><circle cx="1120" cy="427" r="10" fill="none" stroke="#0AA8A7" stroke-width="3"/></g><g data-step="3" data-effect="fade"><text class="oi-small" x="628" y="456" text-anchor="middle">Converged ✓</text></g></svg><p class="opening-line" data-step="4" data-effect="enter">Juan David → the architecture behind the idea.</p></div>
+<aside class="notes"><p class="t">1:00 · Oscar · Opening 11/11</p><p>GitOps is a set of practices that can connect these reviewed decisions to operations. Git holds a declarative, versioned description of desired state. [Step 1] A controller automatically pulls that description. [Step 2] It observes the running system and attempts to reconcile the differences. The illustration now shows that distinction: desired state is the target, while actual state may lag behind it. [Step 3] Reconciliation attempts to move the running system towards the target. A merge changes what we want; successful execution still needs verification. InnerSource describes how people contribute and maintain the shared foundation. GitOps connects that collaboration to the operational loop. [Step 4] We now have the problem, the proposed landing zone, and the boundaries we need to design. Juan David will show how the shared base, company context and GitOps fit together in the technical architecture.</p></aside></section>
 
 <!-- ══════════════ 05 · IAC LAYERS ══════════════ -->
-<section class="slide content light p05" data-title="OpenTofu / Terraform: infrastructure in layers" data-time="1:15">
+<section class="slide content light p05" data-title="OpenTofu / Terraform: infrastructure in layers" data-time="1:15"><div class="speaker-badge" data-speaker="JUAN DAVID"><span class="speaker-dot"></span><span>JUAN DAVID</span><span class="speaker-scope">TECHNICAL</span></div>
   <style>
     .p05 .grid { display: grid; grid-template-columns: 740px 1fr; gap: 32px; align-items: start; }
     .p05 .fig { width: 740px; margin-top: -4px; }
@@ -1375,7 +1112,7 @@ body.print-mode svg.dia .ln.live { animation: none; }
 </section>
 
 <!-- ══════════════ 06 · HELM ══════════════ -->
-<section class="slide content light p06" data-title="Helm: packaging applications and controllers" data-time="1:00">
+<section class="slide content light p06" data-title="Helm: packaging applications and controllers" data-time="1:00"><div class="speaker-badge" data-speaker="JUAN DAVID"><span class="speaker-dot"></span><span>JUAN DAVID</span><span class="speaker-scope">TECHNICAL</span></div>
   <style>
     .p06 .cols2 { gap: 32px; align-items: start; }
     .p06 .card { padding: 20px 24px 22px; }
@@ -1460,7 +1197,7 @@ body.print-mode svg.dia .ln.live { animation: none; }
 </section>
 
 <!-- ══════════════ 07 · INFRASTRUCTURE HAS A REGISTRY TOO ══════════════ -->
-<section class="slide content dark p07" data-title="Infrastructure has a registry too" data-time="0:45">
+<section class="slide content dark p07" data-title="Infrastructure has a registry too" data-time="0:45"><div class="speaker-badge" data-speaker="JUAN DAVID"><span class="speaker-dot"></span><span>JUAN DAVID</span><span class="speaker-scope">TECHNICAL</span></div>
   <style>
     .p07 .body { display: flex; flex-direction: column; gap: 18px; }
     .p07 .fig { width: 1184px; }
@@ -1518,7 +1255,7 @@ body.print-mode svg.dia .ln.live { animation: none; }
 </section>
 
 <!-- ══════════════ 08 · GITOPS 101 ══════════════ -->
-<section class="slide content light p08" data-title="GitOps in one picture: merged means deployed" data-time="1:15">
+<section class="slide content light p08" data-title="GitOps in one picture: merged means deployed" data-time="1:15"><div class="speaker-badge" data-speaker="JUAN DAVID"><span class="speaker-dot"></span><span>JUAN DAVID</span><span class="speaker-scope">TECHNICAL</span></div>
   <style>
     .p08 .cols2 { grid-template-columns: 710px 1fr; gap: 28px; align-items: start; }
     .p08 .fig { width: 710px; }
@@ -1599,7 +1336,7 @@ body.print-mode svg.dia .ln.live { animation: none; }
 </section>
 
 <!-- ══════════════ 09 · PLATFORM CONCEPT ══════════════ -->
-<section class="slide content light p09" data-title="What a platform is" data-time="1:00">
+<section class="slide content light p09" data-title="What a platform is" data-time="1:00"><div class="speaker-badge" data-speaker="JUAN DAVID"><span class="speaker-dot"></span><span>JUAN DAVID</span><span class="speaker-scope">TECHNICAL</span></div>
   <style>
     .p09 .compare { margin-top: 2px; gap: 28px; align-items: stretch; grid-template-columns: 1fr 1fr; }
     .p09 .compare .col .bullets li { font-size: 22px; line-height: 1.35; margin-bottom: 12px; }
@@ -1651,7 +1388,7 @@ body.print-mode svg.dia .ln.live { animation: none; }
 </section>
 
 <!-- ══════════════ 10 · TWO REPOS ══════════════ -->
-<section class="slide content light p10" data-title="Two repos" data-time="2:00">
+<section class="slide content light p10" data-title="Two repos" data-time="2:00"><div class="speaker-badge" data-speaker="JUAN DAVID"><span class="speaker-dot"></span><span>JUAN DAVID</span><span class="speaker-scope">TECHNICAL</span></div>
   <style>
     .p10 .fig { margin-top: -6px; }
     .p10 .tagline { margin: 6px 0 0; }
@@ -1723,7 +1460,7 @@ body.print-mode svg.dia .ln.live { animation: none; }
 </section>
 
 <!-- ══════════════ 11 · INSIDE THE INNERSOURCE REPO ══════════════ -->
-<section class="slide content dark p11" data-title="Inside the InnerSource repo: a project of projects" data-time="1:30">
+<section class="slide content dark p11" data-title="Inside the InnerSource repo: a project of projects" data-time="1:30"><div class="speaker-badge" data-speaker="JUAN DAVID"><span class="speaker-dot"></span><span>JUAN DAVID</span><span class="speaker-scope">TECHNICAL</span></div>
   <style>
     .p11 .callout { margin-top: 10px; }
   </style>
@@ -1799,7 +1536,7 @@ body.print-mode svg.dia .ln.live { animation: none; }
 </section>
 
 <!-- ══════════════ 12 · INSIDE THE COMPANY'S REPO ══════════════ -->
-<section class="slide content dark p12" data-title="Inside the company's repo: the Kustomize overlay" data-time="1:15">
+<section class="slide content dark p12" data-title="Inside the company's repo: the Kustomize overlay" data-time="1:15"><div class="speaker-badge" data-speaker="JUAN DAVID"><span class="speaker-dot"></span><span>JUAN DAVID</span><span class="speaker-scope">TECHNICAL</span></div>
   <style>
     .p12 .cols2 { grid-template-columns: 760px 1fr; gap: 32px; align-items: start; }
     .p12 .tab { margin: 14px 0 10px; font-family: var(--font-mono); font-size: 17px; line-height: 1.4; font-weight: 700; color: var(--teal-100); }
@@ -1840,7 +1577,7 @@ body.print-mode svg.dia .ln.live { animation: none; }
 </section>
 
 <!-- ══════════════ 13 · CONTRIBUTION FLOW ══════════════ -->
-<section class="slide content light p13" data-title="The pull request as the unit of contribution" data-time="1:15">
+<section class="slide content light p13" data-title="The pull request as the unit of contribution" data-time="1:15"><div class="speaker-badge" data-speaker="JUAN DAVID"><span class="speaker-dot"></span><span>JUAN DAVID</span><span class="speaker-scope">TECHNICAL</span></div>
   <style>
     .p13 .row { position: relative; margin-top: 14px; }
     .p13 .row .step p { font-size: 18px; }
@@ -1894,7 +1631,7 @@ body.print-mode svg.dia .ln.live { animation: none; }
 </section>
 
 <!-- ══════════════ 14 · CODEOWNERS ══════════════ -->
-<section class="slide content dark p14" data-title="Trusted Committers in CODEOWNERS" data-time="1:00">
+<section class="slide content dark p14" data-title="Trusted Committers in CODEOWNERS" data-time="1:00"><div class="speaker-badge" data-speaker="JUAN DAVID"><span class="speaker-dot"></span><span>JUAN DAVID</span><span class="speaker-scope">TECHNICAL</span></div>
   <style>
     .p14 h2 code { font-family: var(--font-mono); font-size: .9em; color: inherit; }
     .p14 .cols2 { grid-template-columns: 580px 1fr; gap: 36px; align-items: start; margin-top: 4px; }
@@ -1938,7 +1675,7 @@ body.print-mode svg.dia .ln.live { animation: none; }
 </section>
 
 <!-- ══════════════ 15 · GUARDRAILS ══════════════ -->
-<section class="slide content light p15" data-title="Policy-as-code guardrails, not approval boards" data-time="1:30">
+<section class="slide content light p15" data-title="Policy-as-code guardrails, not approval boards" data-time="1:30"><div class="speaker-badge" data-speaker="JUAN DAVID"><span class="speaker-dot"></span><span>JUAN DAVID</span><span class="speaker-scope">TECHNICAL</span></div>
   <style>
     .p15 .compare { margin-top: 0; gap: 28px; align-items: stretch; }
     .p15 .compare .col { padding: 14px 26px 8px; }
@@ -2005,7 +1742,7 @@ body.print-mode svg.dia .ln.live { animation: none; }
 </section>
 
 <!-- ══════════════ 16 · FOUR MECHANISMS ══════════════ -->
-<section class="slide content light p16" data-title="The four mechanisms in one row" data-time="0:40">
+<section class="slide content light p16" data-title="The four mechanisms in one row" data-time="0:40"><div class="speaker-badge" data-speaker="JUAN DAVID"><span class="speaker-dot"></span><span>JUAN DAVID</span><span class="speaker-scope">TECHNICAL</span></div>
   <style>
     .p16 .steps { margin-top: 12px; }
     .p16 .step h3 { font-size: 23px; }
@@ -2040,7 +1777,7 @@ body.print-mode svg.dia .ln.live { animation: none; }
 </section>
 
 <!-- ══════════════ 17 · AGENTIC PLATFORM ══════════════ -->
-<section class="slide content dark p17" data-title="Agents as consumers and contributors: AI proposes, GitOps disposes" data-time="1:30">
+<section class="slide content dark p17" data-title="Agents as consumers and contributors: AI proposes, GitOps disposes" data-time="1:30"><div class="speaker-badge" data-speaker="JUAN DAVID"><span class="speaker-dot"></span><span>JUAN DAVID</span><span class="speaker-scope">TECHNICAL</span></div>
   <style>
     .p17 .callout { margin-top: 28px; }
     .p17 svg.dia #f17-deploy .box { fill: var(--surface-2); stroke-width: 3; }
@@ -2121,7 +1858,7 @@ body.print-mode svg.dia .ln.live { animation: none; }
 </section>
 
 <!-- ══════════════ 18 · AGENTIC MARKETPLACE ══════════════ -->
-<section class="slide content light p18" data-title="The agentic marketplace: agents, skills and tools as artifacts" data-time="1:15">
+<section class="slide content light p18" data-title="The agentic marketplace: agents, skills and tools as artifacts" data-time="1:15"><div class="speaker-badge" data-speaker="JUAN DAVID"><span class="speaker-dot"></span><span>JUAN DAVID</span><span class="speaker-scope">TECHNICAL</span></div>
   <style>
     .p18 .cols3 { gap: 12px 18px; }
     .p18 .card { padding: 18px 18px; display: flex; flex-direction: column; gap: 10px; }
@@ -2168,7 +1905,7 @@ body.print-mode svg.dia .ln.live { animation: none; }
 </section>
 
 <!-- ══════════════ 19 · HEART OF THE HOLDING ══════════════ -->
-<section class="slide content dark p19" data-title="Heart of the holding" data-time="1:30">
+<section class="slide content dark p19" data-title="Heart of the holding" data-time="1:30"><div class="speaker-badge" data-speaker="JUAN DAVID"><span class="speaker-dot"></span><span>JUAN DAVID</span><span class="speaker-scope">TECHNICAL</span></div>
   <h2><span class="k">Part 5 · Agentic platforms</span>GitOps is the <em>heart</em> of the holding</h2>
   <div class="body">
     <svg class="dia" viewBox="0 0 1184 420" role="img" aria-label="Three bands: the holding's InnerSource registry of six shelves publishes into one InnerSource platform repo, which releases down to four companies; contributions travel back up as pull requests.">
@@ -2229,7 +1966,7 @@ body.print-mode svg.dia .ln.live { animation: none; }
 </section>
 
 <!-- ══════════════ 20 · ROADMAP ══════════════ -->
-<section class="slide content light p20" data-title="The roadmap: five stages" data-time="1:30">
+<section class="slide content light p20" data-title="The roadmap: five stages" data-time="1:30"><div class="speaker-badge" data-speaker="JUAN DAVID"><span class="speaker-dot"></span><span>JUAN DAVID</span><span class="speaker-scope">TECHNICAL</span></div>
   <style>
     .p20 .steps.n5 { margin-top: 12px; row-gap: 0; grid-template-rows: auto auto auto auto auto; }
     .p20 .steps.n5::before { left: 30px; right: 30px; }
@@ -2296,7 +2033,7 @@ body.print-mode svg.dia .ln.live { animation: none; }
 </section>
 
 <!-- ══════════════ 21 · PITFALLS ══════════════ -->
-<section class="slide content light p21" data-title="What breaks: pitfalls to design against" data-time="1:00">
+<section class="slide content light p21" data-title="What breaks: pitfalls to design against" data-time="1:00"><div class="speaker-badge" data-speaker="JUAN DAVID"><span class="speaker-dot"></span><span>JUAN DAVID</span><span class="speaker-scope">TECHNICAL</span></div>
   <style>
     .p21 .cols2 { gap: 32px; margin-top: 8px; }
     .p21 .pill { margin-bottom: 18px; }
@@ -2336,7 +2073,7 @@ body.print-mode svg.dia .ln.live { animation: none; }
 </section>
 
 <!-- ══════════════ 22 · TAKEAWAYS ══════════════ -->
-<section class="slide teal quote p22" data-title="Takeaways + the one line to remember" data-time="0:45">
+<section class="slide teal quote p22" data-title="Takeaways + the one line to remember" data-time="0:45"><div class="speaker-badge" data-speaker="OSCAR + JUAN"><span class="speaker-dot"></span><span>OSCAR + JUAN</span><span class="speaker-scope">CLOSING</span></div>
   <style>
     /* los takeaways ocupan la banda clara del degradado; la cita llena el hueco de arriba al entrar */
     .p22 .q { text-wrap: balance; }
@@ -2361,7 +2098,7 @@ body.print-mode svg.dia .ln.live { animation: none; }
 </section>
 
 <!-- ══════════════ 23 · CLOSING ══════════════ -->
-<section class="slide night closing duo p23" data-title="Thank you · Q&A" data-time="0:15">
+<section class="slide night closing duo p23" data-title="Thank you · Q&A" data-time="0:15"><div class="speaker-badge" data-speaker="OSCAR + JUAN"><span class="speaker-dot"></span><span>OSCAR + JUAN</span><span class="speaker-scope">CLOSING</span></div>
   <style>
     .p23.closing .talk { width: 860px; }
     .p23.closing .qr img { opacity: .35; }
@@ -2793,6 +2530,92 @@ body.print-mode svg.dia .ln.live { animation: none; }
     const pre = document.createElement('pre'); pre.id = 'audit'; pre.textContent = out.join('\n') + '\n' + t.join('\n'); document.body.append(pre);
     document.title = 'AUDIT ' + (out.some(l => /OVERFLOW|SMALL/.test(l)) ? 'FAIL' : 'OK');
   }
+})();
+</script>
+<nav class="speaker-map" aria-label="Presenter sections"><a href="#2"><b>Oscar</b> · 1–11</a><a href="#12"><b>Juan David</b> · 12–28</a></nav><script id="opening-visual-motion">/* Illustration entrances and scoped, lifecycle-managed organic loops. The original player owns navigation,
+   slide transitions, flow paths, notes and reduced-motion state. */
+(() => {
+ const deck=document.querySelector('#deck');
+ const live=new Set(),loops=new Map();let lastScene=null,lastStep=-1;
+ const poseOf=(el,step)=>{const poses=JSON.parse(el.dataset.poses);const keys=Object.keys(poses).map(Number).filter(k=>k<=step).sort((a,b)=>a-b);return poses[keys.at(-1)]||poses[0];};
+ const query=new URLSearchParams(location.search);
+ const reduce=()=>document.documentElement.classList.contains('reduce-motion')||query.has('print');
+ const stop=()=>{live.forEach(a=>a.cancel());live.clear();};
+ const stopLoops=()=>{loops.forEach(a=>a.cancel());loops.clear();};
+ function syncLoops(scene,reset=false){
+  if(reset)stopLoops();
+  const eligible=new Set();
+  if(scene?.classList.contains('opening')&&!reduce()){
+   scene.querySelectorAll('[data-loop]').forEach(el=>{
+    let parent=el,visible=true;
+    while(parent&&parent!==scene){
+     if(parent.hasAttribute('data-step')&&!parent.classList.contains('on'))visible=false;
+     if(parent.hasAttribute('data-poses')&&Number(parent.style.opacity)===0)visible=false;
+     parent=parent.parentElement;
+    }
+    if(visible)eligible.add(el);
+   });
+  }
+  loops.forEach((a,el)=>{if(!eligible.has(el)){a.cancel();loops.delete(el);}});
+  eligible.forEach(el=>{
+   if(loops.has(el))return;
+   const kind=el.dataset.loop,amplitude=Number(el.dataset.amplitude)||2.5;
+   let frames,easing='linear';
+   if(kind==='rotate')frames=[{transform:'rotate(0deg)'},{transform:'rotate(360deg)'}];
+   else if(kind==='route')frames=[{strokeDashoffset:'0px'},{strokeDashoffset:'-220px'}];
+   else if(kind==='packet'){const dx=Number(el.dataset.dx)||0,dy=Number(el.dataset.dy)||0;frames=[{offset:0,transform:'translate(0,0)',opacity:0},{offset:.12,transform:'translate(0,0)',opacity:1},{offset:.7,transform:`translate(${dx}px,${dy}px)`,opacity:1},{offset:.78,transform:`translate(${dx}px,${dy}px)`,opacity:0},{offset:1,transform:`translate(${dx}px,${dy}px)`,opacity:0}];}
+   else if(kind==='pulse')frames=[{offset:0,transform:'scale(1)',opacity:.6},{offset:.65,transform:'scale(2.6)',opacity:0},{offset:1,transform:'scale(2.6)',opacity:0}];
+   else {easing='ease-in-out';frames=[{offset:0,transform:'translate(0px,0px)'},{offset:.3,transform:`translate(1px,-${amplitude}px)`},{offset:.65,transform:`translate(-.7px,-${amplitude*.45}px)`},{offset:1,transform:'translate(0px,0px)'}];}
+   const a=el.animate(frames,{duration:Number(el.dataset.period)||5800,delay:1700,iterations:Infinity,easing});
+   loops.set(el,a);
+  });
+  const paused=document.hidden||document.querySelector('#blk.on');
+  loops.forEach(a=>paused?a.pause():a.play());
+ }
+ const play=(el)=>{
+  if(reduce())return;
+  const kind=el.dataset.cue,duration=Number(el.dataset.duration)||900,delay=Number(el.dataset.delay)||0;
+  let frames;
+  if(kind==='travel') {const [x,y]=(el.dataset.from||'-200,0').split(',').map(Number);frames=[{transform:`translate(${x}px,${y}px) rotate(-10deg)`,opacity:0},{offset:.12,opacity:1},{transform:'translate(0,0) rotate(0deg)',opacity:1}];}
+  else if(kind==='assemble')frames=[{transform:'translateY(-30px)',opacity:0},{transform:'translateY(0)',opacity:1}];
+  else if(kind==='tilt')frames=[{transform:'translateY(18px) rotate(-5deg)',opacity:0},{transform:'translateY(0) rotate(0deg)',opacity:1}];
+  else if(kind==='spin')frames=[{transform:'rotate(-100deg) scale(.88)',opacity:0},{transform:'rotate(0deg) scale(1)',opacity:1}];
+  else frames=[{transform:'translateY(22px)',opacity:0},{transform:'translateY(0)',opacity:1}];
+  const a=el.animate(frames,{duration,delay,easing:'cubic-bezier(.16,1,.3,1)',fill:'backwards'});live.add(a);a.finished.then(()=>live.delete(a),()=>live.delete(a));
+ };
+ function sync(records=[]){
+  const scene=deck.querySelector('.slide.active'),step=Number(scene?.dataset.at||0);
+  const changed=scene!==lastScene,stepped=step!==lastStep;
+  const replay=records.some(r=>r.type==='attributes'&&r.attributeName==='class'&&r.target.closest?.('.opening')&&r.target.hasAttribute('data-step')&&r.oldValue?.includes('on')&&r.target.classList.contains('on'));
+  if(changed||stepped||replay){
+   const posed=[...deck.querySelectorAll('.opening [data-poses]')];
+   const current=new Map(posed.map(el=>[el,{transform:getComputedStyle(el).transform,opacity:getComputedStyle(el).opacity}]));
+   stop();
+   posed.forEach(el=>{
+    const onScene=el.closest('.slide')===scene;
+    const target=poseOf(el,onScene?step:Number(el.closest('.slide').dataset.at||0));
+    const from=changed||replay?poseOf(el,0):current.get(el);
+    el.style.transform=target.transform;el.style.opacity=target.opacity;
+    if(onScene&&!reduce()&&(from.transform!==target.transform||from.opacity!==target.opacity)){
+     const switching=el.dataset.switch==='context',entering=Number(target.opacity)>Number(from.opacity);
+     const a=el.animate([from,target],{duration:switching?(entering?420:180):1250,delay:switching&&entering?220:0,easing:'cubic-bezier(.22,1,.36,1)',fill:'backwards'});live.add(a);a.finished.then(()=>live.delete(a),()=>live.delete(a));
+    }
+   });
+   if(scene?.classList.contains('opening')&&!reduce()){
+   const cues=[...scene.querySelectorAll('[data-cue]')].filter(el=>{const parent=el.closest('[data-step]');return parent&&Number(parent.dataset.step)<=step&&(changed||replay||Number(parent.dataset.step)===step);});
+   cues.forEach((el,n)=>play(el));
+  }lastScene=scene;lastStep=step;}
+  const paused=document.hidden||document.querySelector('#blk.on');live.forEach(a=>paused?a.pause():a.play());
+  if(reduce())stop();
+  syncLoops(scene,changed||replay);
+ }
+ new MutationObserver(sync).observe(deck,{subtree:true,attributes:true,attributeOldValue:true,attributeFilter:['class','data-at']});
+ new MutationObserver(()=>sync()).observe(document.documentElement,{attributes:true,attributeFilter:['class']});
+ new MutationObserver(()=>sync()).observe(document.querySelector('#blk'),{attributes:true,attributeFilter:['class']});
+ document.addEventListener('visibilitychange',()=>sync());addEventListener('pagehide',()=>{stop();stopLoops();});
+ // A missing upstream raster must not display a broken icon and duplicated alt.
+ document.querySelectorAll('.lockup img').forEach(img=>{const fallback=()=>{img.classList.add('asset-missing');img.parentElement.classList.add('asset-fallback');};img.addEventListener('error',fallback);if(img.complete&&!img.naturalWidth)fallback();});
+ sync();
 })();
 </script>
 </body>

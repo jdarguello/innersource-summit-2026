@@ -1,0 +1,46 @@
+[
+  {
+    "title": "Welcome and speaker introductions",
+    "seconds": 20
+  },
+  {
+    "title": "The ABC of InnerSource",
+    "seconds": 45
+  },
+  {
+    "title": "Knowledge and team mobility",
+    "seconds": 35
+  },
+  {
+    "title": "The holding context",
+    "seconds": 40
+  },
+  {
+    "title": "Repeated assembly and divergence",
+    "seconds": 50
+  },
+  {
+    "title": "A larger unit of reuse",
+    "seconds": 30
+  },
+  {
+    "title": "The proposed InnerSource landing zone",
+    "seconds": 50
+  },
+  {
+    "title": "Common base and company autonomy",
+    "seconds": 55
+  },
+  {
+    "title": "Benefits and the working agreement",
+    "seconds": 50
+  },
+  {
+    "title": "Context engineering: shared sources and dynamic runtime context",
+    "seconds": 45
+  },
+  {
+    "title": "GitOps and handoff to Juan David",
+    "seconds": 60
+  }
+]

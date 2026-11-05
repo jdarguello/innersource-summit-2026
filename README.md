@@ -61,3 +61,11 @@ operate within tool-enforced scope and revise a suggested next action from
 waiting for rollout to verifying health after a fresh observation. Knowledge,
 observation and selected-context packets animate independently; the scene is an
 illustration of the proposed behavior, not a recorded agent execution.
+
+Speaker portraits are now included as assets/oscar.png and assets/juan.png,
+in the order supplied by the user, with the original image bytes preserved.
+Their circular framing is controlled by CSS in the existing cover.
+
+Oscar's current public profile is kept in deck/speaker.json. The cover and
+closing show “Oscar Lobaton Salas” and “SRE & FDE at Cobre”; the supplied full
+bio is included in the cover speaker notes for the host.

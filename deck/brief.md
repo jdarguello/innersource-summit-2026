@@ -151,3 +151,22 @@ Acceptance criteria before editing:
   with the fresh observation. Both status and action reverse/replay correctly.
 - Validate all states, loop pause/reduced/off-slide behavior, and the explicit
   status-to-next-action relation. Preserve eight minutes and Juan's content.
+
+## Speaker portraits
+
+Use the two supplied images in their stated order: Oscar first, Juan second.
+Copy them unchanged into assets/oscar.png and assets/juan.png. Keep the original
+cover's circular placement; use CSS object-fit/object-position for framing.
+Acceptance: both portraits load, names/alt text match, no photo placeholder is
+visible, source image bytes are preserved, and the technical slides stay intact.
+
+## Current Oscar profile
+
+Source: the user-provided email. Update cover and closing with Oscar Lobaton
+Salas / SRE & FDE at Cobre. Keep the complete supplied bio, including DevOps
+Institute Ambassador and prior Credicorp roles/across 15 companies, in the
+cover speaker notes. Do not publish the private email correspondence or infer
+contact handles. Acceptance: no role/company placeholder remains for Oscar,
+full bio is available, no new timed slide or layout change, Juan's content stays
+unchanged except Oscar's profile in the shared closing. Draft the email reply
+in chat; do not send it.

@@ -1,4 +1,4 @@
-import re,json
+import re,json,html
 from pathlib import Path
 root=Path(__file__).resolve().parents[1]
 base=(root/'presentation-full.html').read_text()
@@ -20,6 +20,27 @@ result=result.replace('data-time="0:30"','data-time="0:20"',1)
 cover_note_start=result.index('<aside class="notes">',result.index('<section class="slide'))
 cover_note_end=result.index('</aside>',cover_note_start)+len('</aside>')
 result=result[:cover_note_start]+'<aside class="notes"><p class="t">0:20 · Oscar + Juan · Welcome</p><p>We are Oscar Lobaton and Juan David Arguello Plata. I will start with the context and the opportunity: taking InnerSource from shared components to a shared platform foundation. Juan David will then show how the architecture works.</p></aside>'+result[cover_note_end:]
+# Use the user-supplied portraits in the original cover's image slots.
+assert result.count('src="assets/oscar.jpg"')==1
+assert result.count('src="assets/headshot.jpg"')==1
+result=result.replace('src="assets/oscar.jpg"','src="assets/oscar.png"',1)
+result=result.replace('src="assets/headshot.jpg"','src="assets/juan.png"',1)
+# Current speaker data supplied by Oscar; the original snapshot remains intact.
+profile=json.loads((root/'deck/speaker.json').read_text())
+assert result.count('Oscar<br>Lobaton</div>')==1
+result=result.replace('Oscar<br>Lobaton</div>','Oscar<br>Lobaton Salas</div>',1)
+assert result.count('Role · Company …</div>')==2
+result=result.replace('Role · Company …</div>',html.escape(profile['role'])+'</div>')
+result=result.replace('<div class="n">Oscar Lobaton</div>','<div class="n">'+html.escape(profile['name'])+'</div>',1)
+result=result.replace('class="role ph-role"','class="role"',1)
+result=result.replace('<div class="r ph">','<div class="r">',1)
+# The bio lives in notes so the cover stays readable and the eight-minute script
+# stays short. It is available to the host, rather than an extra timed scene.
+bio='<p class="speaker-bio"><b>Speaker bio · Oscar Lobaton Salas</b><br>'+html.escape(profile['bio'])+'</p>'
+cover_note_start=result.index('<aside class="notes">',result.index('<section class="slide'))
+cover_note_end=result.index('</aside>',cover_note_start)
+result=result[:cover_note_end]+bio+result[cover_note_end:]
+result=result.replace("Oscar's role, company, LinkedIn and GitHub","Oscar's LinkedIn and GitHub")
 # Add only speaker metadata to existing slide markup. No technical content edits.
 count=0
 def speaker(m):

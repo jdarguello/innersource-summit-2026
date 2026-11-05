@@ -909,6 +909,8 @@ body.print-mode svg.dia .ln.live { animation: none; }
 /* Context engineering: one dominant, material context object on the Summit canvas. */
 .slide.context-slide.dark{background-image:var(--contours),radial-gradient(ellipse 430px 330px at 54% 55%,#21616080,transparent 85%),linear-gradient(160deg,#0F4F4D,#094949 55%,#073B3B)}.context-slide svg .ctx-label{font-size:28px;font-weight:800;fill:#FFF}.context-slide svg .ctx-small{font-size:19px;font-weight:600;fill:#BAD8D5}.context-slide svg .ctx-eyebrow{font-size:15px;letter-spacing:1.5px;font-weight:800;fill:#BAD8D5}.context-slide svg .ctx-value{font-size:26px;font-weight:700;fill:#EDF6F5}.context-slide svg .ctx-status{font-size:25px;font-weight:800;fill:#FFC561}.context-slide svg .ctx-status-new{fill:#D9F3CE}.context-slide svg .ctx-refresh{stroke-width:2;opacity:.4}.context-slide .opening-line{font-size:22px}.context-slide svg [data-cue="assemble"]{filter:drop-shadow(0 12px 9px #001D1A30)}
 .context-slide svg .ctx-effect-title{font-size:23px;fill:#FFF;font-weight:800}.context-slide svg .ctx-effect-small{font-size:16px;fill:#BAD8D5;font-weight:600}.context-slide svg .ctx-effect-note{font-size:14px;fill:#BAD8D5;letter-spacing:.4px}.context-slide svg .ctx-rule{fill:none;stroke:#74A5A2;stroke-opacity:.4;stroke-width:1}.context-slide svg .ctx-signal{fill:#FFC561;pointer-events:none}
+/* Supplied portraits, in the existing two-speaker cover layout. */
+.p01 .ph:has(img[src="assets/oscar.png"]){border:0;background:transparent}.p01 .ph:has(img[src="assets/oscar.png"]) .lab{display:none}.p01.title-slide .ph .photo[src="assets/oscar.png"]{left:0;top:0;object-position:50% 35%}.p01.title-slide .photo[src="assets/juan.png"]{object-position:50% 50%}
 </style></head>
 <body>
 
@@ -968,16 +970,16 @@ body.print-mode svg.dia .ln.live { animation: none; }
   <h1 data-step="0" data-effect="enter">GitOps in InnerSource: A&nbsp;Roadmap for Enterprise Infrastructure Governance</h1>
   <p class="sub" data-step="0" data-effect="fade" data-delay="250">What if infrastructure could be an InnerSource project too? Not a module here and a component there: the whole platform.</p>
 
-  <div class="name" data-step="0" data-effect="slide" data-delay="500">Oscar<br>Lobaton</div>
-  <div class="role ph-role" data-step="0" data-effect="slide" data-delay="500">Role · Company …</div>
+  <div class="name" data-step="0" data-effect="slide" data-delay="500">Oscar<br>Lobaton Salas</div>
+  <div class="role" data-step="0" data-effect="slide" data-delay="500">SRE &amp; FDE at Cobre</div>
   <div class="ph" data-step="0" data-effect="pop" data-delay="500">
     <span class="lab">photo</span>
-    <img class="photo" src="assets/oscar.jpg" alt="Oscar Lobaton" data-optional>
+    <img class="photo" src="assets/oscar.png" alt="Oscar Lobaton" data-optional>
   </div>
 
   <div class="name b" data-step="0" data-effect="slide" data-delay="500">Juan David<br>Arguello Plata</div>
   <div class="role b" data-step="0" data-effect="slide" data-delay="500">InnerSource Program Lead, Credicorp</div>
-  <img class="photo b" src="assets/headshot.jpg" alt="Juan David Arguello Plata" data-step="0" data-effect="pop" data-delay="500">
+  <img class="photo b" src="assets/juan.png" alt="Juan David Arguello Plata" data-step="0" data-effect="pop" data-delay="500">
 
   <div class="band">
     <div>
@@ -987,7 +989,7 @@ body.print-mode svg.dia .ln.live { animation: none; }
     <div class="tag">#InnerSourceSummit</div>
   </div>
 
-  <aside class="notes"><p class="t">0:20 · Oscar + Juan · Welcome</p><p>We are Oscar Lobaton and Juan David Arguello Plata. I will start with the context and the opportunity: taking InnerSource from shared components to a shared platform foundation. Juan David will then show how the architecture works.</p></aside>
+  <aside class="notes"><p class="t">0:20 · Oscar + Juan · Welcome</p><p>We are Oscar Lobaton and Juan David Arguello Plata. I will start with the context and the opportunity: taking InnerSource from shared components to a shared platform foundation. Juan David will then show how the architecture works.</p><p class="speaker-bio"><b>Speaker bio · Oscar Lobaton Salas</b><br>Oscar Lobaton Salas is a technology enthusiast passionate about Platform Engineering, DevOps, SRE, and FDE. Currently an SRE &amp; FDE at Cobre and a DevOps Institute Ambassador, he previously served as Platform Product Lead and Corporate DevSecOps Architect at Credicorp—leading platform strategy, golden paths, agentic development, and the InnerSource initiative across 15 companies.</p></aside>
 </section>
 
 <section class="slide content light opening intro02" data-title="Share the work. Move the knowledge." data-time="0:45"><div class="speaker-badge" data-speaker="OSCAR"><span class="speaker-dot"></span><span>OSCAR</span><span class="speaker-scope">INTRODUCTION · 2 / 11</span></div>
@@ -2107,8 +2109,8 @@ body.print-mode svg.dia .ln.live { animation: none; }
   <div class="thanks" data-step="0" data-effect="enter">Thank you</div>
   <div class="talk" data-step="0" data-effect="fade">GitOps in InnerSource: A Roadmap for Enterprise Infrastructure Governance</div>
   <div class="contact" data-step="0" data-effect="slide">
-    <div class="n">Oscar Lobaton</div>
-    <div class="r ph">Role · Company …</div>
+    <div class="n">Oscar Lobaton Salas</div>
+    <div class="r">SRE &amp; FDE at Cobre</div>
     <div class="links">LinkedIn <b>/in/…</b> · GitHub <b>@…</b></div>
   </div>
   <div class="contact b" data-step="0" data-effect="slide" data-delay="400">
@@ -2122,7 +2124,7 @@ body.print-mode svg.dia .ln.live { animation: none; }
   <aside class="notes">
     <p><span class="t">0:15 · Thank you · Q&amp;A. · both</span></p>
     <p>Thanks; open Q&amp;A. Likely questions to prepare: <em>how do you start when subsidiaries already have divergent platforms</em> (answer: stage 1 per company, then extract the common base into stage 2 one controller at a time); <em>who pays for the Trusted Committers' time</em> (answer: the Contracted Contributor pattern, and the saved re-platforming); <em>Argo CD or Flux</em> (answer: either; the governance is in the repo, not the engine).</p>
-    <p class="warn">⚠ "Contracted Contributor" is an InnerSource Commons pattern: verify the name. ⚠ QR is a dimmed placeholder (the summit registration card, bit.ly/isc-2026, not to be scanned): it should point to the public reference repos (EnterpriseClaw and Session-Broker) and the slides if their status in November supports the agentic slide (17); otherwise, to the deck only; caption then shows the real link instead of "QR to come". ⚠ Handles pending: Oscar's role, company, LinkedIn and GitHub; Juan David's GitHub (LinkedIn /in/jdarp to confirm).</p>
+    <p class="warn">⚠ "Contracted Contributor" is an InnerSource Commons pattern: verify the name. ⚠ QR is a dimmed placeholder (the summit registration card, bit.ly/isc-2026, not to be scanned): it should point to the public reference repos (EnterpriseClaw and Session-Broker) and the slides if their status in November supports the agentic slide (17); otherwise, to the deck only; caption then shows the real link instead of "QR to come". ⚠ Handles pending: Oscar's LinkedIn and GitHub; Juan David's GitHub (LinkedIn /in/jdarp to confirm).</p>
   </aside>
 </section>
 

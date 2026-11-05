@@ -8,15 +8,33 @@ const clean=s=>s.replace(/<div class="speaker-badge"[^>]*>[\s\S]*?<\/div>/g,'');
 const schedule=JSON.parse(await read('deck/storyboard.json')),openingCount=schedule.length,totalCount=openingCount+19;
 assert.equal(schedule.reduce((a,s)=>a+s.seconds,0),480);
 const oldSections=sections(original),newSections=sections(current);
-const coverDesign=s=>s.replace(/data-time="[^"]+"/,'').replace(/<aside class="notes">[\s\S]*?<\/aside>/,'');
-assert.equal(coverDesign(clean(newSections[0])),coverDesign(oldSections[0]));
-assert.deepEqual(newSections.slice(openingCount).map(clean),oldSections.slice(4));
+const restoreOscarProfile=s=>s
+ .replace('Oscar<br>Lobaton Salas</div>','Oscar<br>Lobaton</div>')
+ .replace('<div class="n">Oscar Lobaton Salas</div>','<div class="n">Oscar Lobaton</div>')
+ .replace('class="role" data-step=','class="role ph-role" data-step=')
+ .replace('<div class="r">SRE &amp; FDE at Cobre</div>','<div class="r ph">Role · Company …</div>')
+ .replace('SRE &amp; FDE at Cobre</div>','Role · Company …</div>')
+ .replace("Oscar's LinkedIn and GitHub","Oscar's role, company, LinkedIn and GitHub");
+const coverDesign=s=>s.replaceAll("assets/oscar.png","assets/oscar.jpg").replaceAll("assets/juan.png","assets/headshot.jpg").replace(/data-time="[^"]+"/,'').replace(/<aside class="notes">[\s\S]*?<\/aside>/,'');
+assert.equal(coverDesign(restoreOscarProfile(clean(newSections[0]))),coverDesign(oldSections[0]));
+assert.deepEqual(newSections.slice(openingCount).map(clean).map(restoreOscarProfile),oldSections.slice(4));
 assert.equal(current.match(/<script>([\s\S]*?)<\/script>/)[1],original.match(/<script>([\s\S]*?)<\/script>/)[1]);
 assert.equal(current.match(/<style>([\s\S]*?)<\/style>/)[1],original.match(/<style>([\s\S]*?)<\/style>/)[1]);
 const browser=await chromium.launch();const page=await browser.newPage({viewport:{width:1280,height:720}});
 const errors=[],issues=[];page.on('pageerror',e=>errors.push(e.message));
 await fs.mkdir(new URL('qa/integrated/',root),{recursive:true});
 const url='http://127.0.0.1:4173/presentation.html?motion=reduce';await page.goto(url);await page.evaluate(()=>document.fonts.ready);assert.equal(await page.locator('.slide').count(),totalCount);assert.equal(await page.locator('.opening').count(),openingCount-1);
+// The supplied portraits must load in the original, correctly named cover slots.
+for(const [alt,src]of[['Oscar Lobaton','assets/oscar.png'],['Juan David Arguello Plata','assets/juan.png']]){
+ const portrait=page.getByAltText(alt,{exact:true});assert.equal(await portrait.getAttribute('src'),src);assert(await portrait.evaluate(el=>el.complete&&el.naturalWidth>0));
+}
+assert.equal(await page.locator('.p01 .ph .lab').isVisible(),false);
+const profile=JSON.parse(await read('deck/speaker.json'));
+assert.equal(await page.locator('.p01 .role').first().innerText(),profile.role);
+assert.match(await page.locator('.p01 .name').first().innerText(),/Oscar\s+Lobaton Salas/i);
+assert.match(await page.locator('.p01 .speaker-bio').textContent(),/DevOps Institute Ambassador/);
+assert.match(await page.locator('.p01 .speaker-bio').textContent(),/across 15 companies/);
+assert.equal(await page.locator('.p23 .contact').first().locator('.r').textContent(),profile.role);
 let states=0;
 for(let n=1;n<=openingCount;n++){
  await page.goto(`${url}#${n}`);

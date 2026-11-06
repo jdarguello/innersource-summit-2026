@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true"><defs>
+<!-- Fixed-size heads inherit each connector’s stroke, including dark slides. -->
+<marker id="oi-arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0L10 5L0 10Z" fill="context-stroke"/></marker>
 <linearGradient id="oi-deck-top" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#EDF6F5"/><stop offset="1" stop-color="#97BDBB"/></linearGradient>
 <linearGradient id="oi-metal" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#BAD8D5"/><stop offset="1" stop-color="#317775"/></linearGradient>
 <symbol id="oi-code" viewBox="0 0 180 155"><path d="M10 20L158 6L173 119L25 135Z" fill="#094949" stroke="#74A5A2" stroke-width="3"/><path d="M25 135L173 119L180 131L31 149L0 141Z" fill="#74A5A2"/><path d="M34 37L141 26" stroke="#BAD8D5" stroke-width="3"/><circle cx="32" cy="29" r="3" fill="#FFC561"/><circle cx="43" cy="28" r="3" fill="#0AA8A7"/><path d="M68 57L48 77L72 91M110 52L133 68L113 88M98 49L86 97" stroke="#FFC561" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>

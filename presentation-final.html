@@ -22,6 +22,7 @@
          N notes · R replay the current step · M reduced motion on/off · A reveal every step of the slide
          F fullscreen · B black screen · T start/stop the talk timer (Shift+T resets; it also starts by itself on the first → off the title)
          1–9 pin the n-th hover preview of the slide (a click on the preview cell pins it too)
+         H (presentation-final) the optional slides (hidden, data-detour) in or out of the run; the counter and the notes header show the state
   URL:   #n or #n.k (slide.step) · ?motion=reduce|full · ?steps=all · ?print=1 (every slide as one 1280×720 page, all revealed,
          no motion — the PDF build) · ?check=1 (audit: overflow, small text, states; used by deck/tools/render.mjs)
 
@@ -926,6 +927,8 @@ body.print-mode svg.dia .ln.live { animation: none; }
 .slide[data-hidden]{display:none!important}
 </style><style id="final-merge-style">/* presentation-final: the JUAN DAVID · TECHNICAL label stays yellow on dark slides too */
 .slide.content.dark .speaker-badge[data-speaker="JUAN DAVID"]{background:var(--yellow);border-color:var(--yellow);color:var(--teal-900)}
+/* presentation-final: just after H the presenter counter shows for a moment, to confirm the key */
+body.detour-flash #counter{opacity:1}
 </style></head>
 <body>
 
@@ -1056,7 +1059,7 @@ body.print-mode svg.dia .ln.live { animation: none; }
      19 ← 10 · p08a1  INSIDE AN APP
      20 ← 11 · p08c   THE AGENTIC MARKETPLACE
      21 ← 12 · p08c1  THE PLATFORM IS GOVERNED; NOW MAKE IT YOURS
-     22 ← 13 · p08d   SHARE THE PLATFORM, KEEP YOUR DIFFERENCES
+     22 ← 13 · p08d   SHARE THE PLATFORM, KEEP YOUR DIFFERENCES · HIDDEN
      23 ← 14 · p08e   ONE TABLE, THREE COMPANIES, WHO DECIDES WHAT
      24 ← 15 · p08f   IS OUR INNERSOURCE STRATEGY WORKING?
 -->
@@ -3130,8 +3133,8 @@ body.print-mode svg.dia .ln.live { animation: none; }
   </aside>
 </section>
 
-<!-- ══════════════ 22 · SHARE THE PLATFORM, KEEP YOUR DIFFERENCES · Juan David (source 08d) ══════════════ -->
-<section class="slide content light p08d" data-title="Shared platform with custom config, the GitOps way: one pinned platform release (the blueprint), one Kustomize overlay per company (the tracing sheet), Argo CD reconciling each company's result; reusable improvements return upstream by pull request" data-time="1:20"><div class="speaker-badge" data-speaker="JUAN DAVID"><span class="speaker-dot"></span><span>JUAN DAVID</span><span class="speaker-scope">TECHNICAL</span></div>
+<!-- ══════════════ 22 · SHARE THE PLATFORM, KEEP YOUR DIFFERENCES · Juan David (source 08d) · HIDDEN ══════════════ -->
+<section class="slide content light p08d" data-title="Shared platform with custom config, the GitOps way: one pinned platform release (the blueprint), one Kustomize overlay per company (the tracing sheet), Argo CD reconciling each company's result; reusable improvements return upstream by pull request" data-time="1:20" data-hidden="true" data-detour="true"><div class="speaker-badge" data-speaker="JUAN DAVID"><span class="speaker-dot"></span><span>JUAN DAVID</span><span class="speaker-scope">TECHNICAL</span></div>
   <style>
     .p08d .body { display: flex; flex-direction: column; }
     .p08d .fig { position: relative; width: 1184px; height: 400px; }
@@ -4193,6 +4196,29 @@ body.print-mode svg.dia .ln.live { animation: none; }
     const shown = slides.map((s, k) => s.hasAttribute('data-hidden') ? -1 : k).filter(k => k >= 0);
     return direction < 0 ? (shown.filter(k => k <= n).at(-1) ?? shown[0]) : (shown.find(k => k >= n) ?? shown.at(-1));
   }
+  /* ---------- detour (presentation-final): H puts the optional slides (data-detour) in or out of the run ----------
+     They start hidden (data-hidden, like any hidden slide: skipped by navigation and print, numbering preserved). H un-hides them for
+     this session without moving, so the next → reaches them in order. H again hides them; standing on one, it goes on to the next slide. */
+  const detours = slides.filter(s => s.hasAttribute('data-detour'));
+  const detourOpen = () => detours.some(s => !s.hasAttribute('data-hidden'));
+  const detourNote = () => {   // presenter-only text (counter, notes header): shown while open, on the slide before a detour, and just after H
+    if (!detours.length) return '';
+    const open = detourOpen(), near = detours.some(s => slides.indexOf(s) === i + 1);
+    if (!open && !near && !document.body.classList.contains('detour-flash')) return '';
+    return ' · H: slide ' + detours.map(s => slides.indexOf(s) + 1).join(', ') + (open ? ' on' : ' off');
+  };
+  const counterText = () => (i + 1) + ' / ' + slides.length + (motion.reduced ? ' · motion off' : '') + detourNote();
+  let detourTimer;
+  function detour() {
+    if (!detours.length || document.body.classList.contains('print-mode')) return;
+    const open = !detourOpen();
+    detours.forEach(s => open ? s.removeAttribute('data-hidden') : s.setAttribute('data-hidden', 'true'));
+    document.body.classList.add('detour-flash');   // the counter shows for a moment: the presenter sees the key registered
+    clearTimeout(detourTimer);
+    detourTimer = setTimeout(() => { document.body.classList.remove('detour-flash'); counter.textContent = counterText(); paintHead(); }, 2400);
+    if (slides[i].hasAttribute('data-hidden')) render(i, 0, { fade: true, enter: true });   // hidden while standing on it: on to the next slide
+    else { counter.textContent = counterText(); paintHead(); }
+  }
   /* ---------- state → DOM ---------- */
   let i = skipHidden(clamp((parseInt(location.hash.slice(1), 10) || 1) - 1, 0, slides.length - 1));
   let step = parseInt((location.hash.split('.')[1] || '0'), 10) || 0;
@@ -4256,10 +4282,10 @@ body.print-mode svg.dia .ln.live { animation: none; }
   })();
   function paintHead() {
     const s = slides[i], h = notesPanel.querySelector('.head'); if (!h) return;
-    h.innerHTML = `<span><b>${i + 1} / ${slides.length}</b> · ${(s.dataset.title || '')} · step ${step} / ${maxOf(s)}</span><span>this slide: ${s.dataset.time || '—'} · talk ${timer.text()}</span>`;
+    h.innerHTML = `<span><b>${i + 1} / ${slides.length}</b> · ${(s.dataset.title || '')} · step ${step} / ${maxOf(s)}</span><span>this slide: ${s.dataset.time || '—'} · talk ${timer.text()}${detourNote()}</span>`;
   }
   function paint() {
-    counter.textContent = (i + 1) + ' / ' + slides.length + (motion.reduced ? ' · motion off' : '');
+    counter.textContent = counterText();
     progress.style.width = (slides.length > 1 ? (i / (slides.length - 1)) * 100 : 0) + '%';
     const notes = slides[i].querySelector('.notes');
     notesPanel.innerHTML = '<div class="head"></div>' + (notes ? notes.innerHTML : '<em>No notes.</em>');
@@ -4353,6 +4379,7 @@ body.print-mode svg.dia .ln.live { animation: none; }
     else if (kl === 'a') revealAll();
     else if (kl === 'm') toggleMotion();
     else if (kl === 'f') fullscreen();
+    else if (kl === 'h') detour();
     else if (kl === 't') { if (e.shiftKey) timer.reset(); else timer.toggle(); }
     else if (kl === 'b') { $('#blk').classList.toggle('on'); setPaused($('#blk').classList.contains('on')); }
     else if (k === 'Escape') { $('#blk').classList.remove('on'); setPaused(false); }

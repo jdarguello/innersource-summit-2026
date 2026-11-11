@@ -93,3 +93,15 @@ continues to show the final state of each visible slide.
 With the server running, verify this behavior with `npm run check:opening`.
 The older `npm run build` still generates `presentation.html`; it does not
 rebuild or overwrite Juan's `presentation-final.html`.
+
+## GitHub Pages
+
+`.github/workflows/pages.yml` validates the opening on every push to `main`,
+packages `presentation-final.html` as both `index.html` and
+`presentation-final.html`, and deploys the package with its local assets.
+Working files, rehearsal PDFs and QA output are excluded from the deployed site.
+Run `python3 tools/build-pages.py` to inspect the `_site/` package locally.
+
+The repository owner must enable **Settings > Pages > Build and deployment >
+Source: GitHub Actions** if repository permissions prevent automatic enablement.
+After that, rerun the Pages workflow; subsequent pushes deploy automatically.

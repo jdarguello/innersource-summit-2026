@@ -74,3 +74,22 @@ Slide 9 (“Reuse the learning. Share the responsibility.”) is hidden from
 navigation and print, with its source and numbering preserved. Its flag is
 `hidden: true` in deck/storyboard.json. The visible opening is 7:10; re-enabling
 the 50-second slide restores the full eight-minute schedule.
+
+## Final deck: one click per opening slide
+
+Use `presentation-final.html` for Juan's latest technical section and the social
+closing. In this file, Oscar's opening (slides 2-11, with 9 still hidden) plays
+its internal reveals automatically: the first reveal follows after 3.4 seconds,
+then the remaining reveals follow at 3-second intervals. The slide stays on
+screen after the last reveal. Click, Space, Page Down or Right advances to the
+next slide immediately, including while a sequence is still playing.
+
+`R` restarts the opening sequence; `A` shows its final state immediately.
+Left goes to the previous slide fully revealed. Black screen and hidden-tab
+states pause the reveal clock. Reduced motion retains timed reveals without
+movement. Juan's technical slides keep their manual step controls. Print
+continues to show the final state of each visible slide.
+
+With the server running, verify this behavior with `npm run check:opening`.
+The older `npm run build` still generates `presentation.html`; it does not
+rebuild or overwrite Juan's `presentation-final.html`.

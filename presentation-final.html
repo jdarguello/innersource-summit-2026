@@ -4272,6 +4272,29 @@ body.detour-flash #counter{opacity:1}
   const stepsAll = params.get('steps') === 'all';
   let tx = 0, first = true;
 
+  // Oscar's opening: a click enters a slide; its internal steps then play once.
+  // Frame time pauses while blanked/hidden, so returning never skips the sequence.
+  let introFrame = 0;
+  function scheduleIntro() {
+    cancelAnimationFrame(introFrame);
+    introFrame = 0;
+    const scene = slides[i], at = step;
+    if (!scene.classList.contains('opening') || at >= maxOf(scene) || stepsAll) return;
+    let remaining = at === 0 ? 3400 : 3000, last = performance.now();
+    const tick = now => {
+      const elapsed = Math.min(now - last, 100);
+      last = now;
+      if (scene !== slides[i] || at !== step) return;
+      if (!document.hidden && !document.body.classList.contains('paused') && !$('#blk').classList.contains('on')) remaining -= elapsed;
+      if (remaining <= 0) {
+        introFrame = 0;
+        render(i, at + 1, { stepAnim: true });
+      } else introFrame = requestAnimationFrame(tick);
+    };
+    introFrame = requestAnimationFrame(tick);
+  }
+
+
   // render(n, k, o): slide n at step k, as the stable final state; o.fade crossfades from the previous slide,
   // o.enter plays the slide's entry score (data-step="0" pieces, in DOM order), o.stepAnim plays the score of
   // the pieces that just switched on. Every path cancels first; nothing here creates content.
@@ -4303,14 +4326,15 @@ body.detour-flash #counter{opacity:1}
       stepsOf(s).filter(e => stepOf(e) === 0).forEach((e, j) => effect(e, 200 + j * T.gap));
     }
     if (o.stepAnim) stepsOf(s).filter(e => stepOf(e) === step && !was.has(e)).forEach((e, j) => effect(e, j * T.gap));
+    scheduleIntro();
   }
 
   // Navigation: → reveals the next step, then advances; ← hides the last step, then goes back, arriving fully revealed.
   // A jump forward enters with its score; a jump back arrives revealed.
-  function next() { if (i === 0 && timer.idle()) timer.start(); if (step < maxOf(slides[i])) render(i, step + 1, { stepAnim: true }); else if (i < slides.length - 1) render(i + 1, 0, { fade: true, enter: true }); }
-  function prev() { if (step > 0) render(i, step - 1, {}); else if (i > 0) render(i - 1, Infinity, { fade: true }); }
+  function next() { if (i === 0 && timer.idle()) timer.start(); if (!slides[i].classList.contains('opening') && step < maxOf(slides[i])) render(i, step + 1, { stepAnim: true }); else if (i < slides.length - 1) render(i + 1, 0, { fade: true, enter: true }); }
+  function prev() { if (slides[i].classList.contains('opening')) { if (i > 0) render(i - 1, Infinity, { fade: true }); return; } if (step > 0) render(i, step - 1, {}); else if (i > 0) render(i - 1, Infinity, { fade: true }); }
   function jump(n) { n = clamp(n, 0, slides.length - 1); if (n !== i) render(n, n > i ? 0 : Infinity, { fade: true, enter: n > i }); }
-  function replay() { const s = slides[i]; stepsOf(s).forEach(e => e.classList.remove('on')); render(i, step, step ? { stepAnim: true } : { enter: true }); }
+  function replay() { const s = slides[i]; stepsOf(s).forEach(e => e.classList.remove('on')); if (s.classList.contains('opening')) { render(i, 0, { enter: true }); return; } render(i, step, step ? { stepAnim: true } : { enter: true }); }
   function revealAll() { render(i, Infinity, { stepAnim: true }); }
 
   /* ---------- counter, progress, notes (with the talk timer) ---------- */
